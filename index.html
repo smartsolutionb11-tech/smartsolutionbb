@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Solutions – Tablets</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Playfair+Display:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #1A6FFF;
+    --orange-light: #4A8FFF;
+    --dark: #F5F7FF;
+    --dark2: #EEF1FB;
+    --dark3: #E4E8F7;
+    --card: #FFFFFF;
+    --border: rgba(26,111,255,0.12);
+    --text: #1A1A2E;
+    --muted: #6B7280;
+    --white: #1A1A2E;
+    --green: #00A877;
+    --green-light: rgba(0,200,150,0.10);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    overflow-x: hidden;
+  }
+
+  /* TOPBAR */
+  .topbar {
+    background: var(--orange);
+    text-align: center;
+    padding: 8px 4%;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    text-transform: uppercase;
+  }
+
+  /* NAVBAR */
+  nav {
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
+    padding: 0 4%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    color: var(--white);
+    letter-spacing: -1px;
+  }
+  .logo span { color: var(--orange); }
+
+  .nav-links {
+    display: none;
+    gap: 32px; list-style: none;
+  }
+  .nav-links a {
+    color: var(--muted); text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+    letter-spacing: 0.2px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+
+  .icon-btn {
+    background: var(--dark3); border: 1px solid var(--border);
+    color: var(--text); width: 36px; height: 36px;
+    border-radius: 8px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; transition: all 0.2s; position: relative;
+    text-decoration: none;
+  }
+  .icon-btn:hover { border-color: var(--orange); color: var(--orange); }
+
+  /* HERO */
+  .hero {
+    min-height: auto;
+    background: linear-gradient(135deg, #F0F4FF 0%, #E8EFFF 50%, #EEF2FF 100%);
+    display: flex; align-items: center;
+    padding: 40px 4%;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    display: none;
+  }
+  .hero-grid {
+    display: grid; grid-template-columns: 1fr;
+    align-items: center; gap: 30px; width: 100%;
+    position: relative; z-index: 1;
+    text-align: center;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(26,111,255,0.10);
+    border: 1px solid rgba(26,111,255,0.25);
+    border-radius: 20px; padding: 6px 14px;
+    font-size: 11px; font-weight: 600;
+    color: var(--orange); margin-bottom: 16px;
+    letter-spacing: 0.5px;
+    justify-content: center;
+  }
+  .hero h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-weight: 800; line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+  .hero h1 .highlight {
+    color: var(--orange);
+    display: block;
+  }
+  .hero p {
+    color: var(--muted); font-size: 14px;
+    line-height: 1.6; margin: 0 auto 20px;
+    max-width: 100%;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.1px;
+  }
+  .hero-btns { display: flex; gap: 10px; flex-direction: column; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--orange);
+    color: white; border: none;
+    padding: 12px 20px; border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700; font-size: 13px;
+    cursor: pointer; transition: all 0.2s;
+    text-decoration: none; display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+  .btn-primary:hover {
+    background: var(--orange-light);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(26,111,255,0.3);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--text); border: 1px solid var(--border);
+    padding: 12px 20px; border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700; font-size: 13px;
+    cursor: pointer; transition: all 0.2s;
+    text-decoration: none; display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+  .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+
+  .hero-img-placeholder {
+    width: 100%;
+    max-width: 280px;
+    height: 240px;
+    background: var(--dark3);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px;
+    font-size: 60px;
+    animation: float 4s ease-in-out infinite;
+    position: relative; overflow: hidden;
+    margin: 0 auto;
+  }
+  .hero-img-placeholder::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 40%, rgba(26,111,255,0.08) 0%, transparent 60%);
+  }
+  .hero-img-placeholder span.tag {
+    font-size: 13px; color: var(--orange);
+    font-weight: 600; font-family: 'Outfit', sans-serif;
+  }
+  @keyframes float {
+    0%,100%{ transform: translateY(0); }
+    50%{ transform: translateY(-12px); }
+  }
+
+  /* STATS */
+  .stats-bar {
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 24px 4%;
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .stat { text-align: center; width: 100%; }
+  .stat-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px; font-weight: 800; color: var(--orange);
+    display: block;
+  }
+  .stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+  /* DEAL BANNER */
+  .deal-ticker {
+    background: linear-gradient(90deg, var(--orange), #0055CC, var(--orange));
+    background-size: 200% 100%;
+    animation: shimmer 3s ease infinite;
+    padding: 10px 4%;
+    display: flex; align-items: center; justify-content: center;
+    gap: 4px; font-weight: 600; font-size: 11px;
+    letter-spacing: 0.3px; color: white;
+    cursor: pointer;
+    overflow: hidden;
+  }
+  @keyframes shimmer {
+    0%{ background-position: 200% 0; }
+    100%{ background-position: -200% 0; }
+  }
+
+  /* CATEGORIES */
+  section { padding: 50px 4%; }
+  .section-header {
+    display: flex; flex-direction: column; align-items: flex-start;
+    margin-bottom: 24px;
+    gap: 16px;
+  }
+  .section-header h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px; font-weight: 800; letter-spacing: -0.8px;
+  }
+  .section-header p { color: var(--muted); font-size: 12px; margin-top: 0px; }
+  .view-all {
+    color: var(--orange); font-size: 12px; font-weight: 600;
+    text-decoration: none; border-bottom: 1px solid rgba(26,111,255,0.3);
+    padding-bottom: 2px; transition: border-color 0.2s;
+  }
+  .view-all:hover { border-color: var(--orange); }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .cat-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 16px 12px;
+    text-align: center; cursor: pointer;
+    transition: all 0.25s;
+  }
+  .cat-card:hover {
+    border-color: var(--orange);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(26,111,255,0.12);
+  }
+  .cat-icon { font-size: 28px; margin-bottom: 8px; }
+  .cat-name { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 700; }
+  .cat-count { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  /* PRODUCTS */
+  .products-section { background: var(--dark2); }
+  .product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* PRODUCT CARD */
+  .product-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px; overflow: hidden;
+    cursor: default; transition: all 0.3s;
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .product-card:hover {
+    border-color: rgba(26,111,255,0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(26,111,255,0.12);
+  }
+  .product-badge {
+    position: absolute; top: 12px; left: 12px; z-index: 2;
+    color: white;
+    font-size: 10px; font-weight: 700; padding: 4px 10px;
+    border-radius: 20px; letter-spacing: 0.3px;
+  }
+  .product-badge.samsung { background: #1428A0; }
+  .product-badge.xiaomi { background: #FF6900; }
+
+  .product-wishlist {
+    position: absolute; top: 12px; right: 12px; z-index: 2;
+    background: rgba(255,255,255,0.85); border: 1px solid var(--border);
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; cursor: pointer; transition: all 0.2s;
+  }
+  .product-wishlist:hover { background: rgba(26,111,255,0.12); }
+
+  .product-img {
+    height: 200px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--dark3);
+    overflow: hidden;
+    position: relative;
+  }
+  .product-img img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+    padding: 12px;
+    transition: transform 0.3s;
+  }
+  .product-card:hover .product-img img {
+    transform: scale(1.04);
+  }
+  .product-img::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(26,111,255,0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .product-info { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+  .product-brand {
+    font-size: 10px; font-weight: 600;
+    letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px;
+  }
+  .product-brand.samsung { color: #1428A0; }
+  .product-brand.xiaomi { color: #FF6900; }
+
+  .product-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px; font-weight: 800; line-height: 1.3;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+  }
+
+  .product-specs-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 14px;
+    font-size: 12px;
+  }
+  .product-specs-table tr { border-bottom: 1px solid var(--border); }
+  .product-specs-table tr:last-child { border-bottom: none; }
+  .product-specs-table td { padding: 5px 0; }
+  .product-specs-table td:first-child { color: var(--muted); width: 45%; }
+  .product-specs-table td:last-child { font-weight: 500; color: var(--text); text-align: right; }
+
+  .product-rating {
+    display: flex; align-items: center; gap: 5px;
+    margin-bottom: 14px;
+  }
+  .stars { color: #FFB800; font-size: 12px; }
+  .rating-num { font-size: 11px; color: var(--muted); }
+
+  /* QUANTITY CONTROL */
+  .quantity-control {
+    display: flex; align-items: center; gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden;
+    background: var(--dark3);
+    width: fit-content;
+    margin-bottom: 14px;
+  }
+  .qty-btn {
+    background: none; border: none; cursor: pointer;
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700;
+    color: var(--orange);
+    transition: background 0.15s;
+    line-height: 1;
+  }
+  .qty-btn:hover { background: rgba(26,111,255,0.10); }
+  .qty-value {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px; font-weight: 700;
+    min-width: 32px; text-align: center;
+    color: var(--text);
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    height: 32px; line-height: 32px;
+    background: var(--card);
+    user-select: none;
+  }
+
+  .product-footer {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: auto; padding-top: 10px;
+    border-top: 1px solid var(--border);
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .price-new {
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px; font-weight: 800; color: var(--white);
+    line-height: 1; letter-spacing: -0.5px;
+  }
+  .price-sub { font-size: 10px; color: var(--muted); margin-top: 2px; }
+
+  .btn-buy {
+    background: var(--orange); border: none;
+    color: white; padding: 10px 14px;
+    border-radius: 10px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700; font-size: 12px;
+    cursor: pointer; transition: all 0.2s;
+    white-space: nowrap; text-decoration: none;
+    display: inline-block;
+  }
+  .btn-buy:hover {
+    background: var(--orange-light);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(26,111,255,0.3);
+  }
+
+  /* DEAL OF THE DAY */
+  .deal-section {
+    background: linear-gradient(135deg, #EEF2FF 0%, #E0EAFF 100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 4%;
+  }
+  .deal-grid {
+    display: grid; grid-template-columns: 1fr;
+    gap: 30px; align-items: center;
+  }
+  .deal-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(26,111,255,0.10);
+    border: 1px solid rgba(26,111,255,0.25);
+    border-radius: 20px; padding: 6px 14px;
+    font-size: 11px; font-weight: 600; color: var(--orange);
+    margin-bottom: 12px;
+  }
+  .deal-grid h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px; font-weight: 800;
+    letter-spacing: -0.8px; line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .deal-grid p { color: var(--muted); line-height: 1.6; margin-bottom: 20px; font-size: 14px; }
+  .countdown {
+    display: flex; gap: 10px; margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .count-box {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 10px 12px; text-align: center; min-width: 60px;
+  }
+  .count-num {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px; font-weight: 800; color: var(--orange);
+    display: block; line-height: 1;
+  }
+  .count-label { font-size: 9px; color: var(--muted); margin-top: 3px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .deal-img {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; height: 280px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    overflow: hidden; position: relative;
+  }
+  .deal-img img {
+    width: 85%; height: 85%; object-fit: contain;
+  }
+  .deal-img::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 50% 40%, rgba(26,111,255,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* PROMO BANNERS */
+  .promo-grid {
+    display: grid; grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .promo-card {
+    border-radius: 14px; overflow: hidden;
+    position: relative; height: 150px;
+    display: flex; align-items: flex-end; padding: 18px;
+    cursor: pointer; transition: transform 0.3s;
+  }
+  .promo-card:hover { transform: scale(1.02); }
+  .promo-card.p1 { background: linear-gradient(135deg, #0F2A4A, #1a3f6f); }
+  .promo-card.p2 { background: linear-gradient(135deg, #2A0F0F, #6f1a1a); }
+  .promo-card.p3 { background: linear-gradient(135deg, #0F2A1A, #1a6f3a); }
+  .promo-emoji {
+    position: absolute; right: 12px; top: 12px;
+    font-size: 40px; opacity: 0.9;
+  }
+  .promo-content { position: relative; z-index: 1; color: white; }
+  .promo-sub { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; opacity: 0.7; margin-bottom: 3px; }
+  .promo-title { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 800; line-height: 1.2; }
+  .promo-cta { font-size: 11px; opacity: 0.8; margin-top: 6px; }
+
+  /* ABOUT SECTION */
+  #sobre {
+    background: linear-gradient(135deg, #F0F4FF 0%, #E8EFFF 100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr;
+    gap: 30px; align-items: center;
+  }
+  .about-content h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px; font-weight: 800; letter-spacing: -0.6px;
+    margin-bottom: 16px;
+  }
+  .about-content p {
+    color: var(--muted); line-height: 1.6;
+    margin-bottom: 14px; font-size: 13px;
+  }
+  .about-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 16px;
+    margin-bottom: 12px;
+    transition: all 0.2s;
+  }
+  .about-card:hover {
+    border-color: var(--orange);
+    box-shadow: 0 8px 24px rgba(26,111,255,0.12);
+  }
+  .about-card-icon { font-size: 24px; margin-bottom: 8px; }
+  .about-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px; font-weight: 700; margin-bottom: 4px;
+  }
+  .about-card p {
+    color: var(--muted); font-size: 12px; line-height: 1.5; margin: 0;
+  }
+  .about-img {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; padding: 20px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 300px;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-img img {
+    width: 100%; height: 100%; object-fit: cover; border-radius: 20px;
+  }
+  .about-img::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(circle at 70% 40%, rgba(26,111,255,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .about-img-emoji { font-size: 80px; position: relative; z-index: 1; }
+
+  /* SUPPORT/FAQ SECTION */
+  #suporte {
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .support-intro {
+    max-width: 100%; margin: 0 auto 30px; text-align: center;
+  }
+  .support-intro h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px; font-weight: 800; letter-spacing: -0.6px;
+    margin-bottom: 10px;
+  }
+  .support-intro p {
+    color: var(--muted); font-size: 14px; line-height: 1.6;
+  }
+
+  /* SUPPORT CARDS GRID */
+  .support-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px; margin-bottom: 30px;
+  }
+  .support-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 20px;
+    transition: all 0.3s;
+    cursor: pointer;
+    position: relative;
+  }
+  .support-card:hover {
+    border-color: var(--orange);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(26,111,255,0.15);
+  }
+  .support-card-icon {
+    font-size: 32px; margin-bottom: 12px;
+  }
+  .support-card h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px; font-weight: 700; margin-bottom: 8px;
+    color: var(--text);
+  }
+  .support-card p {
+    color: var(--muted); font-size: 13px; line-height: 1.5;
+    margin-bottom: 12px;
+  }
+  .support-card-link {
+    color: var(--orange); font-weight: 600; text-decoration: none;
+    font-size: 12px; display: inline-flex; align-items: center; gap: 4px;
+    transition: gap 0.2s;
+  }
+  .support-card-link:hover { gap: 8px; }
+
+  /* FAQ ACCORDION */
+  .faq-section {
+    max-width: 100%; margin: 0 auto;
+  }
+  .faq-section h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px; font-weight: 800; margin-bottom: 18px;
+    text-align: center;
+  }
+  .faq-item {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; overflow: hidden;
+    margin-bottom: 10px;
+    transition: all 0.2s;
+  }
+  .faq-item:hover { border-color: var(--orange); }
+  .faq-question {
+    padding: 14px 16px;
+    display: flex; justify-content: space-between; align-items: center;
+    cursor: pointer;
+    user-select: none;
+    font-weight: 600;
+    color: var(--text);
+    font-size: 14px;
+  }
+  .faq-question:hover { background: var(--dark3); }
+  .faq-icon {
+    font-size: 16px; transition: transform 0.3s;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+  .faq-item.active .faq-icon {
+    transform: rotate(180deg);
+  }
+  .faq-answer {
+    display: none;
+    padding: 0 16px 14px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    border-top: 1px solid var(--border);
+  }
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  /* QUICK SUPPORT BUTTONS */
+  .quick-support {
+    background: var(--dark);
+    border: 2px solid var(--border);
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .quick-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+  }
+  .quick-btn:hover {
+    border-color: var(--orange);
+    background: var(--dark3);
+  }
+  .quick-btn-icon {
+    font-size: 24px; margin-bottom: 6px;
+  }
+  .quick-btn-text {
+    font-size: 11px;
+  }
+
+  /* CONTACT SECTION */
+  #contacto {
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+  }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start;
+  }
+  .contact-info h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px; font-weight: 800; letter-spacing: -0.3px;
+    margin-bottom: 12px;
+  }
+  .contact-info p { color: var(--muted); line-height: 1.6; margin-bottom: 20px; font-size: 13px; }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 14px; margin-bottom: 10px;
+  }
+  .contact-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+  .contact-item-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
+  .contact-item-value { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; margin-top: 2px; }
+  .contact-form-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 24px;
+  }
+  .contact-form-card h3 {
+    font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 18px;
+  }
+  .form-group { margin-bottom: 14px; }
+  .form-group label { font-size: 11px; color: var(--muted); font-weight: 600; display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.4px; }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%; padding: 10px 12px;
+    background: var(--dark3); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text);
+    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px;
+    outline: none; transition: border-color 0.2s;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--orange); }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .form-submit {
+    width: 100%; background: var(--orange); color: white; border: none;
+    padding: 12px; border-radius: 10px;
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px;
+    cursor: pointer; transition: all 0.2s; margin-top: 3px;
+  }
+  .form-submit:hover { background: var(--orange-light); transform: translateY(-1px); }
+  .form-success {
+    display: none; background: var(--green-light);
+    border: 1px solid rgba(0,200,150,0.3); border-radius: 10px;
+    padding: 12px 14px; text-align: center;
+    color: var(--green); font-weight: 600; font-size: 13px; margin-top: 10px;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    padding: 40px 4% 20px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1fr;
+    gap: 30px; margin-bottom: 30px;
+  }
+  .footer-brand p { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 10px; max-width: 260px; }
+  .footer-socials { display: flex; gap: 8px; margin-top: 16px; }
+  .social-btn {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: var(--card); border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; cursor: pointer; transition: all 0.2s;
+  }
+  .social-btn:hover { border-color: var(--orange); }
+  .footer-col h4 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px; font-weight: 700; margin-bottom: 12px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 8px; }
+  .footer-col a { color: var(--muted); text-decoration: none; font-size: 12px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--orange); }
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    padding-top: 18px; display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .footer-bottom p { font-size: 11px; color: var(--muted); }
+  .payment-icons { display: flex; gap: 6px; flex-wrap: wrap; }
+  .pay-icon {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 6px; padding: 3px 8px;
+    font-size: 10px; color: var(--muted);
+  }
+
+  /* DESKTOP RESPONSIVE */
+  @media (min-width: 769px) {
+    nav { height: 68px; padding: 0 5%; }
+    .logo { font-size: 24px; }
+    .nav-links { display: flex; }
+    .icon-btn { width: 40px; height: 40px; font-size: 18px; }
+    
+    .hero {
+      min-height: 560px;
+      padding: 0 5%;
+    }
+    .hero::before {
+      display: block;
+      content: '';
+      position: absolute; right: -100px; top: -100px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(26,111,255,0.10) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-grid {
+      grid-template-columns: 1fr 1fr;
+      text-align: left;
+      gap: 60px;
+    }
+    .hero-badge { justify-content: flex-start; }
+    .hero h1 { font-size: clamp(36px, 5vw, 60px); }
+    .hero p { margin-bottom: 32px; max-width: 440px; }
+    .hero-btns { flex-direction: row; }
+    .btn-primary, .btn-outline { width: auto; }
+    .hero-img-placeholder {
+      width: 420px; height: 340px;
+      max-width: none;
+      margin: 0;
+    }
+    
+    .stats-bar { flex-direction: row; justify-content: space-around; }
+    
+    .section-header { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+    
+    .cat-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+    
+    .product-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+    
+    .deal-grid { grid-template-columns: 1fr 1.2fr; }
+    
+    .promo-grid { grid-template-columns: repeat(3, 1fr); }
+    .promo-card { height: 220px; }
+    .promo-emoji { font-size: 56px; }
+    
+    .about-grid { grid-template-columns: 1fr 1fr; }
+    
+    .support-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    
+    .quick-support { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+    
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+    
+    .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
+    .footer-bottom { flex-direction: row; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+
+
+<!-- NAVBAR -->
+<nav>
+  <div class="logo">Smart<span>Solutions</span>.</div>
+  <ul class="nav-links">
+    <li><a href="#produtos">Tablets</a></li>
+    <li><a href="#ofertas">Ofertas</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#suporte">Suporte</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="#contacto" class="icon-btn" title="Conta">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div>
+      <div class="hero-badge">✦ Loja Oficial no Huambo</div>
+      <h1>
+        Fique à Frente com os
+        <span class="highlight">Melhores Tablets</span>
+      </h1>
+      <p>Descubra a linha completa Samsung e Xiaomi — tecnologia de ponta, desempenho excepcional e design premium ao melhor preço no Huambo.</p>
+      <div class="hero-btns">
+        <a href="#produtos" class="btn-primary">Ver Todos os Tablets →</a>
+        <a href="#ofertas" class="btn-outline">Ver Ofertas</a>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;align-items:center;">
+      <div class="hero-img-placeholder" style="background:none; border:none; padding:0; overflow:hidden;">
+        <img src="https://lh3.googleusercontent.com/d/1KiY8RJV1UgXx8Rkiy7oTT69RdK2IOeyJ=s1000?authuser=0" alt="Samsung & Xiaomi Tablets" style="width:100%; height:100%; object-fit:cover; border-radius:24px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><span class="stat-num">500+</span><div class="stat-label">Tablets Vendidos</div></div>
+  <div class="stat"><span class="stat-num">15+</span><div class="stat-label">Modelos Disponíveis</div></div>
+  <div class="stat"><span class="stat-num">4.9★</span><div class="stat-label">Avaliação Média</div></div>
+  <div class="stat"><span class="stat-num">2 Anos</span><div class="stat-label">Garantia Oficial</div></div>
+  <div class="stat"><span class="stat-num">24/7</span><div class="stat-label">Suporte Técnico</div></div>
+</div>
+
+<!-- DEAL TICKER -->
+<div class="deal-ticker" id="ofertas">
+  🔥 &nbsp; Melhores Preços em Huambo &nbsp;|&nbsp; Samsung · Xiaomi &nbsp;|&nbsp; Entrega Rápida &nbsp;|&nbsp; 🔥
+</div>
+
+<!-- CATEGORIES -->
+<section>
+  <div class="section-header">
+    <div>
+      <h2>Categorias</h2>
+      <p>Encontre o tablet ideal para si · Entrega no Huambo</p>
+    </div>
+    <a href="#produtos" class="view-all">Ver todos os produtos →</a>
+  </div>
+  <div class="cat-grid">
+    <div class="cat-card"><div class="cat-icon">📱</div><div class="cat-name">Samsung Tab</div><div class="cat-count">6 itens</div></div>
+    <div class="cat-card"><div class="cat-icon">📚</div><div class="cat-name">Estudo</div><div class="cat-count">6 itens</div></div>
+    <div class="cat-card"><div class="cat-icon">💼</div><div class="cat-name">Profissional</div><div class="cat-count">3 itens</div></div>
+    <div class="cat-card"><div class="cat-icon">⚡</div><div class="cat-name">Novidades</div><div class="cat-count">5 itens</div></div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="products-section" id="produtos">
+  <div class="section-header">
+    <div>
+      <h2>Tablets em Destaque</h2>
+      <p>Os melhores tablets do mercado · Disponíveis no Huambo</p>
+    </div>
+    <a href="#contacto" class="view-all">Encomende já →</a>
+  </div>
+  <div class="product-grid">
+
+    <!-- SAMSUNG GALAXY TAB A9 -->
+    <div class="product-card">
+      <div class="product-badge samsung">Samsung</div>
+      <div class="product-wishlist">♡</div>
+      <div class="product-img">
+        <img
+          src="https://lh3.googleusercontent.com/d/1TT-jCoNGFB-zRF7S8UAb879quFqJMJMR=s1000?authuser=0"
+          alt="Samsung Galaxy Tab A9"
+          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'"
+        >
+      </div>
+      <div class="product-info">
+        <div class="product-brand samsung">Samsung</div>
+        <div class="product-name">Galaxy Tab A9</div>
+        <table class="product-specs-table">
+          <tr><td>Ecrã</td><td>8.7" LCD TFT</td></tr>
+          <tr><td>Processador</td><td>Helio G99 (Octa-Core)</td></tr>
+          <tr><td>Memória RAM</td><td>8 GB</td></tr>
+          <tr><td>Armazenamento</td><td>128 GB + MicroSD</td></tr>
+          <tr><td>Bateria</td><td>5.100 mAh</td></tr>
+          <tr><td>Câmara</td><td>8 MP (traseira) · 5 MP (frontal)</td></tr>
+          <tr><td>Sistema</td><td>Android 13 · One UI 5.1</td></tr>
+          <tr><td>Conectividade</td><td>Wi-Fi · Bluetooth 5.3</td></tr>
+        </table>
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-num">(342 avaliações)</span>
+        </div>
+        <div class="quantity-control">
+          <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
+          <div class="qty-value">1</div>
+          <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-new">253.119 Kz</div>
+            <div class="price-sub">Preço em Huambo · Stock disponível</div>
+          </div>
+          <a href="#contacto" class="btn-buy">Comprar →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- XIAOMI PAD 6 -->
+    <div class="product-card">
+      <div class="product-badge xiaomi">Xiaomi</div>
+      <div class="product-wishlist">♡</div>
+      <div class="product-img">
+        <img
+          src="https://lh3.googleusercontent.com/d/10YP2xCSnm6slZ2XGkxud22J-S8psZ1eo=s1000?authuser=0"
+          alt="Xiaomi Pad 6"
+          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>🖥️</span>'"
+        >
+      </div>
+      <div class="product-info">
+        <div class="product-brand xiaomi">Xiaomi</div>
+        <div class="product-name">Xiaomi Pad 6</div>
+        <table class="product-specs-table">
+          <tr><td>Ecrã</td><td>11" IPS LCD 144Hz</td></tr>
+          <tr><td>Processador</td><td>Snapdragon 870 (Octa-Core)</td></tr>
+          <tr><td>Memória RAM</td><td>8 GB LPDDR5</td></tr>
+          <tr><td>Armazenamento</td><td>256 GB UFS 3.1</td></tr>
+          <tr><td>Bateria</td><td>8.840 mAh · Carga 33W</td></tr>
+          <tr><td>Câmara</td><td>13 MP (traseira) · 8 MP (frontal)</td></tr>
+          <tr><td>Sistema</td><td>Android 13 · MIUI Pad 14</td></tr>
+          <tr><td>Conectividade</td><td>Wi-Fi 6 · Bluetooth 5.3</td></tr>
+        </table>
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-num">(218 avaliações)</span>
+        </div>
+        <div class="quantity-control">
+          <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
+          <div class="qty-value">1</div>
+          <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-new">208.000 Kz</div>
+            <div class="price-sub">Preço no Huambo · Stock disponível</div>
+          </div>
+          <a href="#contacto" class="btn-buy">Comprar →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAMSUNG GALAXY TAB A9 — PRATA -->
+    <div class="product-card">
+      <div class="product-badge samsung">Samsung</div>
+      <div class="product-wishlist">♡</div>
+      <div class="product-img" style="background:#f2f2f2;">
+        <img
+          src="https://lh3.googleusercontent.com/d/1MhKmdKq1I7yKs3faWRK5VrUjzA9eU_eG=s1000?authuser=0"
+          alt="Samsung Galaxy Tab A9 Prata"
+          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'"
+        >
+      </div>
+      <div class="product-info">
+        <div class="product-brand samsung">Samsung</div>
+        <div class="product-name">Galaxy Tab A9 — Prata</div>
+        <table class="product-specs-table">
+          <tr><td>Cor</td><td>Prata (Silver)</td></tr>
+          <tr><td>Ecrã</td><td>8.7" LCD TFT</td></tr>
+          <tr><td>Processador</td><td>Helio G99 (Octa-Core)</td></tr>
+          <tr><td>Memória RAM</td><td>8 GB</td></tr>
+          <tr><td>Armazenamento</td><td>128 GB + MicroSD</td></tr>
+          <tr><td>Bateria</td><td>5.100 mAh</td></tr>
+          <tr><td>Sistema</td><td>Android 13 · One UI 5.1</td></tr>
+          <tr><td>Conectividade</td><td>Wi-Fi · Bluetooth 5.3</td></tr>
+        </table>
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-num">(198 avaliações)</span>
+        </div>
+        <div class="quantity-control">
+          <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
+          <div class="qty-value">1</div>
+          <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-new">253.119 Kz</div>
+            <div class="price-sub">Preço no Huambo · Stock disponível</div>
+          </div>
+          <a href="#contacto" class="btn-buy">Comprar →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAMSUNG GALAXY TAB A9 — AZUL NAVY -->
+    <div class="product-card">
+      <div class="product-badge samsung">Samsung</div>
+      <div class="product-wishlist">♡</div>
+      <div class="product-img" style="background:#e6ecf7;">
+        <img
+          src="https://lh3.googleusercontent.com/d/1w5Tjsn5Wj8JJcmXEJwkkeWV4RpXGY80w=s1000?authuser=0"
+          alt="Samsung Galaxy Tab A9 Navy"
+          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'"
+        >
+      </div>
+      <div class="product-info">
+        <div class="product-brand samsung">Samsung</div>
+        <div class="product-name">Galaxy Tab A9 — Azul Navy</div>
+        <table class="product-specs-table">
+          <tr><td>Cor</td><td>Azul Navy (Midnight Blue)</td></tr>
+          <tr><td>Ecrã</td><td>8.7" LCD TFT</td></tr>
+          <tr><td>Processador</td><td>Helio G99 (Octa-Core)</td></tr>
+          <tr><td>Memória RAM</td><td>8 GB</td></tr>
+          <tr><td>Armazenamento</td><td>128 GB + MicroSD</td></tr>
+          <tr><td>Bateria</td><td>5.100 mAh</td></tr>
+          <tr><td>Sistema</td><td>Android 13 · One UI 5.1</td></tr>
+          <tr><td>Conectividade</td><td>Wi-Fi · Bluetooth 5.3</td></tr>
+        </table>
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-num">(175 avaliações)</span>
+        </div>
+        <div class="quantity-control">
+          <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
+          <div class="qty-value">1</div>
+          <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-new">253.119 Kz</div>
+            <div class="price-sub">Preço no Huambo · Stock disponível</div>
+          </div>
+          <a href="#contacto" class="btn-buy">Comprar →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAMSUNG GALAXY TAB A9 — VERDE -->
+    <div class="product-card">
+      <div class="product-badge samsung">Samsung</div>
+      <div class="product-wishlist">♡</div>
+      <div class="product-img" style="background:#e8f5ee;">
+        <img
+          src="https://lh3.googleusercontent.com/d/1TT-jCoNGFB-zRF7S8UAb879quFqJMJMR=s1000?authuser=0"
+          alt="Samsung Galaxy Tab A9 Verde"
+          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'"
+          style="filter: hue-rotate(100deg) saturate(0.75) brightness(1.02);"
+        >
+      </div>
+      <div class="product-info">
+        <div class="product-brand samsung">Samsung</div>
+        <div class="product-name">Galaxy Tab A9 — Verde</div>
+        <table class="product-specs-table">
+          <tr><td>Cor</td><td>Verde (Mint Green)</td></tr>
+          <tr><td>Ecrã</td><td>8.7" LCD TFT</td></tr>
+          <tr><td>Processador</td><td>Helio G99 (Octa-Core)</td></tr>
+          <tr><td>Memória RAM</td><td>8 GB</td></tr>
+          <tr><td>Armazenamento</td><td>128 GB + MicroSD</td></tr>
+          <tr><td>Bateria</td><td>5.100 mAh</td></tr>
+          <tr><td>Sistema</td><td>Android 13 · One UI 5.1</td></tr>
+          <tr><td>Conectividade</td><td>Wi-Fi · Bluetooth 5.3</td></tr>
+        </table>
+        <div class="product-rating">
+          <span class="stars">★★★★☆</span>
+          <span class="rating-num">(89 avaliações)</span>
+        </div>
+        <div class="quantity-control">
+          <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
+          <div class="qty-value">1</div>
+          <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-new">253.119 Kz</div>
+            <div class="price-sub">Preço no Huambo · Stock disponível</div>
+          </div>
+          <a href="#contacto" class="btn-buy">Comprar →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- XIAOMI PAD 6 — AZUL MIST -->
+    <div class="product-card">
+      <div class="product-badge xiaomi">Xiaomi</div>
+      <div class="product-wishlist">♡</div>
+      <div class="product-img" style="background:#e8f0f8;">
+        <img
+          src="https://lh3.googleusercontent.com/d/1ygBSAZ9WcWM-ygZleUfClDTbN96ZcmhI=s1000?authuser=0"
+          alt="Xiaomi Pad 6 Azul"
+          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>🖥️</span>'"
+        >
+      </div>
+      <div class="product-info">
+        <div class="product-brand xiaomi">Xiaomi</div>
+        <div class="product-name">Xiaomi Pad 6 — Azul Mist</div>
+        <table class="product-specs-table">
+          <tr><td>Cor</td><td>Azul Mist (Mist Blue)</td></tr>
+          <tr><td>Ecrã</td><td>11" IPS LCD 144Hz</td></tr>
+          <tr><td>Processador</td><td>Snapdragon 870 (Octa-Core)</td></tr>
+          <tr><td>Memória RAM</td><td>8 GB LPDDR5</td></tr>
+          <tr><td>Armazenamento</td><td>256 GB UFS 3.1</td></tr>
+          <tr><td>Bateria</td><td>8.840 mAh · Carga 33W</td></tr>
+          <tr><td>Sistema</td><td>Android 13 · MIUI Pad 14</td></tr>
+          <tr><td>Conectividade</td><td>Wi-Fi 6 · Bluetooth 5.3</td></tr>
+        </table>
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-num">(144 avaliações)</span>
+        </div>
+        <div class="quantity-control">
+          <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
+          <div class="qty-value">1</div>
+          <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-new">208.000 Kz</div>
+            <div class="price-sub">Preço no Huambo · Stock disponível</div>
+          </div>
+          <a href="#contacto" class="btn-buy">Comprar →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- XIAOMI PAD 6 — DOURADO -->
+    <div class="product-card">
+      <div class="product-badge xiaomi">Xiaomi</div>
+      <div class="product-wishlist">♡</div>
+      <div class="product-img" style="background:#faf5e4;">
+        <img
+          src="https://lh3.googleusercontent.com/d/12zMRQDyTWAy6fXWkevzmUjxyS30Qt6Tr=s1000?authuser=0"
+          alt="Xiaomi Pad 6 Dourado"
+          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>🖥️</span>'"
+        >
+      </div>
+      <div class="product-info">
+        <div class="product-brand xiaomi">Xiaomi</div>
+        <div class="product-name">Xiaomi Pad 6 — Dourado</div>
+        <table class="product-specs-table">
+          <tr><td>Cor</td><td>Dourado (Champion Gold)</td></tr>
+          <tr><td>Ecrã</td><td>11" IPS LCD 144Hz</td></tr>
+          <tr><td>Processador</td><td>Snapdragon 870 (Octa-Core)</td></tr>
+          <tr><td>Memória RAM</td><td>8 GB LPDDR5</td></tr>
+          <tr><td>Armazenamento</td><td>256 GB UFS 3.1</td></tr>
+          <tr><td>Bateria</td><td>8.840 mAh · Carga 33W</td></tr>
+          <tr><td>Sistema</td><td>Android 13 · MIUI Pad 14</td></tr>
+          <tr><td>Conectividade</td><td>Wi-Fi 6 · Bluetooth 5.3</td></tr>
+        </table>
+        <div class="product-rating">
+          <span class="stars">★★★★★</span>
+          <span class="rating-num">(116 avaliações)</span>
+        </div>
+        <div class="quantity-control">
+          <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
+          <div class="qty-value">1</div>
+          <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
+        </div>
+        <div class="product-footer">
+          <div>
+            <div class="price-new">208.000 Kz</div>
+            <div class="price-sub">Preço no Huambo · Stock disponível</div>
+          </div>
+          <a href="#contacto" class="btn-buy">Comprar →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DEAL OF THE DAY -->
+<section class="deal-section">
+  <div class="section-header" style="margin-bottom:30px">
+    <div>
+      <h2>Oferta do Dia</h2>
+      <p>Oferta especial por tempo limitado!</p>
+    </div>
+  </div>
+  <div class="deal-grid">
+    <div>
+      <div class="deal-label">🔥 Oferta Relâmpago</div>
+      <h2>Samsung Galaxy Tab A9<br>Disponível Agora</h2>
+      <p>Aproveite o nosso tablet Samsung mais popular, com ecrã 8.7", processador Helio G99 e bateria de longa duração. Ideal para trabalho, estudo e entretenimento.</p>
+      <div class="countdown">
+        <div class="count-box"><span class="count-num" id="days">02</span><div class="count-label">Dias</div></div>
+        <div class="count-box"><span class="count-num" id="hours">18</span><div class="count-label">Horas</div></div>
+        <div class="count-box"><span class="count-num" id="mins">43</span><div class="count-label">Mins</div></div>
+        <div class="count-box"><span class="count-num" id="secs">28</span><div class="count-label">Seg</div></div>
+      </div>
+      <a href="#contacto" class="btn-primary">Encomendar Agora — 253.119 Kz</a>
+    </div>
+    <div class="deal-img">
+      <img
+        src="https://lh3.googleusercontent.com/d/1TT-jCoNGFB-zRF7S8UAb879quFqJMJMR=s1000?authuser=0"
+        alt="Samsung Galaxy Tab A9"
+        onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:90px\'>📱</span>'"
+      >
+    </div>
+  </div>
+  
+</section>
+
+<!-- PROMO BANNERS -->
+<section>
+  <div class="promo-grid">
+    <div class="promo-card p1">
+      <div class="promo-emoji"></div>
+      <div class="promo-content">
+        <div class="promo-sub">Xiaomi</div>
+        <div class="promo-title">Inovação Tecnológica</div>
+        <div class="promo-cta">Ver Coleção →</div>
+      </div>
+    </div>
+    <div class="promo-card p2">
+      <div class="promo-emoji"></div>
+      <div class="promo-content">
+        <div class="promo-sub">Samsung</div>
+        <div class="promo-title">Liberdade Digital</div>
+        <div class="promo-cta"></div>
+      </div>
+    </div>
+    <div class="promo-card p3">
+      <div class="promo-emoji"></div>
+      <div class="promo-content">
+        <div class="promo-sub">Tablets Pro</div>
+        <div class="promo-title">Trabalho Portátil</div>
+        <div class="promo-cta"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="sobre">
+  <div class="section-header">
+    <div>
+      <h2>Sobre a SmartSolution</h2>
+      <p>Conhece a história por trás da sua loja de confiança</p>
+    </div>
+  </div>
+  <div class="about-grid">
+    <div class="about-img">
+      <img src="https://lh3.googleusercontent.com/d/13XrCxgV72c6ICxiYRg4Uw4sSIjZqPoOV=s1000?authuser=0" alt="Smart Solution Loja">
+    </div>
+    <div class="about-content">
+      <h2>A Sua Loja de Confiança no Huambo</h2>
+      <p>A SmartSolution nasceu da visão de trazer tecnologia de qualidade e acessível a Huambo. Somos especialistas em tablets Samsung e Xiaomi, com um compromisso firme na satisfação dos nossos clientes.</p>
+      
+      <div class="about-card">
+        <div class="about-card-icon"></div>
+        <h3>Missão</h3>
+        <p>Disponibilizar tecnologia premium com preços justos e atendimento personalizado no Huambo.</p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-card-icon"></div>
+        <h3>Visão</h3>
+        <p>Ser a loja de referência para tablets e acessórios de tecnologia em Huambo e região.</p>
+      </div>
+
+      <div class="about-card">
+        <div class="about-card-icon"></div>
+        <h3>Valores</h3>
+        <p>Honestidade, qualidade, confiança e atendimento excepcional em cada interação com os nossos clientes.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT/FAQ SECTION -->
+<section id="suporte">
+  <div class="support-intro">
+    <h2>Centro de Apoio Técnico</h2>
+    <p>Estamos aqui para ajudar. Encontre respostas às suas perguntas ou contacte-nos directamente.</p>
+  </div>
+
+  <!-- SUPPORT CARDS -->
+  <div class="support-grid">
+    <div class="support-card">
+      <div class="support-card-icon">📞</div>
+      <h3>Contacto Directo</h3>
+      <p>Fale directamente com o nosso pessoal experiente através de telefone ou WhatsApp.</p>
+      <a href="tel:+244931304728" class="support-card-link">Ligar Agora →</a>
+    </div>
+
+    <div class="support-card">
+      <div class="support-card-icon">📧</div>
+      <h3>E-mail de Suporte</h3>
+      <p>Envie a sua questão técnica e receba uma resposta detalhada dentro de 24 horas.</p>
+      <a href="mailto:smartsolutionb@gmail.com" class="support-card-link">Enviar E-mail →</a>
+    </div>
+
+    <div class="support-card">
+      <div class="support-card-icon">🛠️</div>
+      <h3>Assistência Técnica</h3>
+      <p>Suporte completo em problemas de hardware, software e configuração de dispositivos.</p>
+      <a href="#contacto" class="support-card-link">Solicitar Ajuda →</a>
+    </div>
+
+    <div class="support-card">
+      <div class="support-card-icon">🔧</div>
+      <h3>Configuração & Setup</h3>
+      <p>Ajuda passo-a-passo para configurar o seu novo tablet e sincronizar dados.</p>
+      <a href="#faq-setup" class="support-card-link">Ver Guias →</a>
+    </div>
+  </div>
+
+  <!-- FAQ SECTION -->
+  <div class="faq-section">
+    <h3>Perguntas Frequentes</h3>
+
+    <div class="faq-item" id="faq-garantia">
+      <div class="faq-question">
+        <span>Qual é o período de garantia dos tablets?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Todos os tablets Samsung e Xiaomi vendidos pela SmartSolution vêm com garantia oficial de 2 anos contra defeitos de fabrico. A garantia cobre reparação ou substituição gratuita do dispositivo durante este período. O comprovativo de compra é necessário para reclamar a garantia.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Como funciona o processo de devolução?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Pode devolver o tablet dentro de 7 dias após a compra se não estiver satisfeito, desde que esteja em condições perfeitas e com todos os acessórios originais. Entre em contacto connosco para iniciar o processo de devolução. O reembolso é processado após inspecção do produto.
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq-setup">
+      <div class="faq-question">
+        <span>Como configuro o meu novo tablet?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Ligamos o tablet, siga as instruções de configuração inicial de Android. Crie ou inicie sessão com a sua conta Google, configure Wi-Fi, e instale as aplicações que necessita. Oferecemos assistência técnica gratuita por telefone se tiver dúvidas durante a configuração.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Qual é o tempo de entrega no Huambo?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Para clientes no Huambo, o tempo de entrega é de 1 a 3 dias úteis após confirmação de pagamento. Oferecemos envio grátis em encomendas acima de 500.000 Kz. Pode rastrear a sua encomenda através do nosso sistema de acompanhamento.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Posso fazer uma encomenda customizada?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Sim! Se procura uma configuração específica ou pacotes com acessórios, contacte-nos directamente. Oferecemos pacotes personalizados com S Pen, teclados, capas protetoras e outros acessórios ao melhor preço.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>O tablet é selado e original?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Todos os tablets vendidos pela SmartSolution são 100% originais e novos, selados do fabricante. Temos parcerias oficiais com Samsung e Xiaomi, garantindo autenticidade e qualidade. Pode verificar a caixa original e os documentos de garantia.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Que métodos de pagamento aceitam?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Aceitamos: Transferência Bancária, Multicaixa, TPA, Vistos/Mastercard e Dinheiro em mão (no Huambo). Oferecemos descontos especiais para pagamentos à vista. Contacte-nos para discutir planos de pagamento personalizados.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Como resolver problemas técnicos com o tablet?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Se tiver problemas técnicos, contacte-nos por telefone ou WhatsApp. O nosso técnico experiente pode diagnosticar o problema remotamente ou agendar uma visita se necessário. Oferecemos reparação sob garantia gratuitamente para defeitos de fabrico.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">
+        <span>Vocês fazem entregas fora do Huambo?</span>
+        <span class="faq-icon">▼</span>
+      </div>
+      <div class="faq-answer">
+        Sim, podemos fazer entregas noutras cidades de Angola. Os custos e tempos de entrega variam conforme a localização. Por favor, contacte-nos com a sua morada para uma cotação personalizada.
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK SUPPORT -->
+  <div class="quick-support">
+    <a href="tel:+244931304728" class="quick-btn">
+      <div class="quick-btn-icon">☎️</div>
+      <div class="quick-btn-text">Telefonar</div>
+    </a>
+    <a href="https://wa.me/244931304728" class="quick-btn">
+      <div class="quick-btn-icon">💬</div>
+      <div class="quick-btn-text">WhatsApp</div>
+    </a>
+    <a href="mailto:smartsolutionb@gmail.com" class="quick-btn">
+      <div class="quick-btn-icon">📧</div>
+      <div class="quick-btn-text">E-mail</div>
+    </a>
+    <a href="#contacto" class="quick-btn">
+      <div class="quick-btn-icon">📝</div>
+      <div class="quick-btn-text">Formulário</div>
+    </a>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contacto">
+  <div class="section-header">
+    <div>
+      <h2>Fale Connosco</h2>
+      <p>Estamos no Huambo para o ajudar · Resposta rápida garantida</p>
+    </div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Entre em Contacto</h2>
+      <p>Tem interesse num dos nossos tablets ou precisa de mais informação? A nossa equipa no Huambo está disponível para o ajudar com qualquer questão.</p>
+      <div class="contact-item">
+        <div class="contact-icon">📍</div>
+        <div>
+          <div class="contact-item-label">Localização</div>
+          <div class="contact-item-value">Huambo, Angola</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📞</div>
+        <div>
+          <div class="contact-item-label">Telefone / WhatsApp</div>
+          <div class="contact-item-value">+244 931 304 728</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">📧</div>
+        <div>
+          <div class="contact-item-label">E-mail</div>
+          <div class="contact-item-value">smartsolutionb@gmail.com</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">🕒</div>
+        <div>
+          <div class="contact-item-label">Horário</div>
+          <div class="contact-item-value">Seg–Sáb: 08h00 – 18h00</div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form-card">
+      <h3>Enviar Mensagem</h3>
+      <div class="form-group">
+        <label>Nome Completo</label>
+        <input type="text" placeholder="O seu nome" id="f-name">
+      </div>
+      <div class="form-group">
+        <label>Telemóvel / WhatsApp</label>
+        <input type="tel" placeholder="+244 9XX XXX XXX" id="f-phone">
+      </div>
+      <div class="form-group">
+        <label>Produto de Interesse</label>
+        <select id="f-product">
+          <option value="">Selecione um produto...</option>
+          <option>Samsung Galaxy Tab A9 — 253.119 Kz</option>
+          <option>Xiaomi Pad 6 — 208.000 Kz</option>
+          <option>Acessórios</option>
+          <option>Outro</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Mensagem</label>
+        <textarea placeholder="Descreva a sua necessidade ou faça a sua encomenda..." id="f-msg"></textarea>
+      </div>
+      <button class="form-submit" onclick="submitForm()">Enviar Mensagem →</button>
+      <div class="form-success" id="form-success">
+        ✅ Mensagem enviada com sucesso! Entraremos em contacto em breve.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">Smart<span>Solutions</span>.</div>
+      <p>A sua loja de tablets Samsung e Xiaomi em Huambo. Tecnologia de ponta com garantia e suporte local.</p>
+      <div class="footer-socials">
+        <div class="social-btn">📘</div>
+        <div class="social-btn">📸</div>
+        <div class="social-btn">🐦</div>
+        <div class="social-btn">💬</div>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Produtos</h4>
+      <ul>
+        <li><a href="#produtos">Samsung Galaxy Tab A9</a></li>
+        <li><a href="#produtos">Xiaomi Pad 6</a></li>
+        <li><a href="#contacto">Acessórios</a></li>
+        <li><a href="#contacto">Novidades</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Suporte</h4>
+      <ul>
+        <li><a href="#suporte">Centro de Ajuda</a></li>
+        <li><a href="#suporte">Garantia</a></li>
+        <li><a href="#suporte">Devoluções</a></li>
+        <li><a href="#contacto">Rastrear Pedido</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Empresa</h4>
+      <ul>
+        <li><a href="#sobre">Sobre Nós</a></li>
+        <li><a href="#contacto">Parceiros</a></li>
+        <li><a href="#">Política de Privacidade</a></li>
+        <li><a href="#">Termos de Uso</a></li>
+        <li><a href="#suporte">FAQs</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 Smart Solution no Huambo. Todos os direitos reservados.</p>
+    <div class="payment-icons">
+      <span class="pay-icon">VISA</span>
+      <span class="pay-icon">Mastercard</span>
+      <span class="pay-icon">Multicaixa</span>
+      <span class="pay-icon">TPA</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Countdown Timer
+  (function() {
+    const end = new Date(Date.now() + (2*24*60*60 + 18*60*60 + 43*60 + 28) * 1000);
+    setInterval(() => {
+      const diff = Math.max(0, end - new Date());
+      document.getElementById('days').textContent = String(Math.floor(diff / 86400000)).padStart(2,'0');
+      document.getElementById('hours').textContent = String(Math.floor((diff % 86400000) / 3600000)).padStart(2,'0');
+      document.getElementById('mins').textContent = String(Math.floor((diff % 3600000) / 60000)).padStart(2,'0');
+      document.getElementById('secs').textContent = String(Math.floor((diff % 60000) / 1000)).padStart(2,'0');
+    }, 1000);
+  })();
+
+  // Wishlist
+  document.querySelectorAll('.product-wishlist').forEach(btn => {
+    btn.addEventListener('click', () => {
+      btn.textContent = btn.textContent.trim() === '♡' ? '♥' : '♡';
+      btn.style.color = btn.textContent.trim() === '♥' ? '#FF6900' : '';
+    });
+  });
+
+  // FAQ Accordion
+  document.querySelectorAll('.faq-question').forEach(question => {
+    question.addEventListener('click', () => {
+      const item = question.closest('.faq-item');
+      const isActive = item.classList.contains('active');
+      document.querySelectorAll('.faq-item').forEach(faq => faq.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    });
+  });
+
+  // Quantity Control
+  function changeQty(btn, delta) {
+    const control = btn.closest('.quantity-control');
+    const display = control.querySelector('.qty-value');
+    let val = parseInt(display.textContent) + delta;
+    if (val < 1) val = 1;
+    if (val > 99) val = 99;
+    display.textContent = val;
+  }
+
+  // Form submit
+  function submitForm() {
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    if (!name || !phone) {
+      alert('Por favor, preencha o nome e o número de telefone.');
+      return;
+    }
+    document.getElementById('form-success').style.display = 'block';
+    document.getElementById('f-name').value = '';
+    document.getElementById('f-phone').value = '';
+    document.getElementById('f-product').value = '';
+    document.getElementById('f-msg').value = '';
+    setTimeout(() => {
+      document.getElementById('form-success').style.display = 'none';
+    }, 5000);
+  }
+</script>
+
+</body>
+</html>
