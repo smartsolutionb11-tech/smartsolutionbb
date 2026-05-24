@@ -33,7 +33,6 @@
     overflow-x: hidden;
   }
 
-  /* TOPBAR */
   .topbar {
     background: var(--orange);
     text-align: center;
@@ -46,7 +45,6 @@
     text-transform: uppercase;
   }
 
-  /* NAVBAR */
   nav {
     background: rgba(255,255,255,0.97);
     backdrop-filter: blur(12px);
@@ -90,7 +88,6 @@
   }
   .icon-btn:hover { border-color: var(--orange); color: var(--orange); }
 
-  /* HERO */
   .hero {
     min-height: auto;
     background: linear-gradient(135deg, #F0F4FF 0%, #E8EFFF 50%, #EEF2FF 100%);
@@ -98,9 +95,7 @@
     padding: 40px 4%;
     position: relative; overflow: hidden;
   }
-  .hero::before {
-    display: none;
-  }
+  .hero::before { display: none; }
   .hero-grid {
     display: grid; grid-template-columns: 1fr;
     align-items: center; gap: 30px; width: 100%;
@@ -195,7 +190,6 @@
     50%{ transform: translateY(-12px); }
   }
 
-  /* STATS */
   .stats-bar {
     background: var(--dark2);
     border-top: 1px solid var(--border);
@@ -211,7 +205,6 @@
   }
   .stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
-  /* DEAL BANNER */
   .deal-ticker {
     background: linear-gradient(90deg, var(--orange), #0055CC, var(--orange));
     background-size: 200% 100%;
@@ -228,7 +221,6 @@
     100%{ background-position: -200% 0; }
   }
 
-  /* CATEGORIES */
   section { padding: 50px 4%; }
   .section-header {
     display: flex; flex-direction: column; align-items: flex-start;
@@ -268,7 +260,6 @@
   .cat-name { font-family: 'Outfit', sans-serif; font-size: 12px; font-weight: 700; }
   .cat-count { font-size: 10px; color: var(--muted); margin-top: 2px; }
 
-  /* PRODUCTS */
   .products-section { background: var(--dark2); }
   .product-grid {
     display: grid;
@@ -276,7 +267,6 @@
     gap: 20px;
   }
 
-  /* PRODUCT CARD */
   .product-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -321,9 +311,7 @@
     padding: 12px;
     transition: transform 0.3s;
   }
-  .product-card:hover .product-img img {
-    transform: scale(1.04);
-  }
+  .product-card:hover .product-img img { transform: scale(1.04); }
   .product-img::after {
     content: '';
     position: absolute; inset: 0;
@@ -365,7 +353,6 @@
   .stars { color: #FFB800; font-size: 12px; }
   .rating-num { font-size: 11px; color: var(--muted); }
 
-  /* QUANTITY CONTROL */
   .quantity-control {
     display: flex; align-items: center; gap: 0;
     border: 1px solid var(--border);
@@ -426,7 +413,6 @@
     box-shadow: 0 6px 18px rgba(26,111,255,0.3);
   }
 
-  /* DEAL OF THE DAY */
   .deal-section {
     background: linear-gradient(135deg, #EEF2FF 0%, #E0EAFF 100%);
     border-top: 1px solid var(--border);
@@ -473,9 +459,7 @@
     align-items: center; justify-content: center;
     overflow: hidden; position: relative;
   }
-  .deal-img img {
-    width: 85%; height: 85%; object-fit: contain;
-  }
+  .deal-img img { width: 85%; height: 85%; object-fit: contain; }
   .deal-img::before {
     content: '';
     position: absolute; inset: 0;
@@ -483,7 +467,6 @@
     pointer-events: none;
   }
 
-  /* PROMO BANNERS */
   .promo-grid {
     display: grid; grid-template-columns: 1fr;
     gap: 16px;
@@ -498,16 +481,12 @@
   .promo-card.p1 { background: linear-gradient(135deg, #0F2A4A, #1a3f6f); }
   .promo-card.p2 { background: linear-gradient(135deg, #2A0F0F, #6f1a1a); }
   .promo-card.p3 { background: linear-gradient(135deg, #0F2A1A, #1a6f3a); }
-  .promo-emoji {
-    position: absolute; right: 12px; top: 12px;
-    font-size: 40px; opacity: 0.9;
-  }
+  .promo-emoji { position: absolute; right: 12px; top: 12px; font-size: 40px; opacity: 0.9; }
   .promo-content { position: relative; z-index: 1; color: white; }
   .promo-sub { font-size: 10px; text-transform: uppercase; letter-spacing: 0.8px; opacity: 0.7; margin-bottom: 3px; }
   .promo-title { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 800; line-height: 1.2; }
   .promo-cta { font-size: 11px; opacity: 0.8; margin-top: 6px; }
 
-  /* ABOUT SECTION */
   #sobre {
     background: linear-gradient(135deg, #F0F4FF 0%, #E8EFFF 100%);
     border-top: 1px solid var(--border);
@@ -522,39 +501,25 @@
     font-size: 24px; font-weight: 800; letter-spacing: -0.6px;
     margin-bottom: 16px;
   }
-  .about-content p {
-    color: var(--muted); line-height: 1.6;
-    margin-bottom: 14px; font-size: 13px;
-  }
+  .about-content p { color: var(--muted); line-height: 1.6; margin-bottom: 14px; font-size: 13px; }
   .about-card {
     background: var(--card); border: 1px solid var(--border);
     border-radius: 14px; padding: 16px;
     margin-bottom: 12px;
     transition: all 0.2s;
   }
-  .about-card:hover {
-    border-color: var(--orange);
-    box-shadow: 0 8px 24px rgba(26,111,255,0.12);
-  }
+  .about-card:hover { border-color: var(--orange); box-shadow: 0 8px 24px rgba(26,111,255,0.12); }
   .about-card-icon { font-size: 24px; margin-bottom: 8px; }
-  .about-card h3 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px; font-weight: 700; margin-bottom: 4px;
-  }
-  .about-card p {
-    color: var(--muted); font-size: 12px; line-height: 1.5; margin: 0;
-  }
+  .about-card h3 { font-family: 'Outfit', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 4px; }
+  .about-card p { color: var(--muted); font-size: 12px; line-height: 1.5; margin: 0; }
   .about-img {
     background: var(--card); border: 1px solid var(--border);
     border-radius: 20px; padding: 20px;
     display: flex; align-items: center; justify-content: center;
     min-height: 300px;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
   }
-  .about-img img {
-    width: 100%; height: 100%; object-fit: cover; border-radius: 20px;
-  }
+  .about-img img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; }
   .about-img::before {
     content: '';
     position: absolute; inset: 0;
@@ -563,298 +528,106 @@
   }
   .about-img-emoji { font-size: 80px; position: relative; z-index: 1; }
 
-  /* SUPPORT/FAQ SECTION */
   #suporte {
     background: var(--dark2);
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
   }
-  .support-intro {
-    max-width: 100%; margin: 0 auto 30px; text-align: center;
-  }
-  .support-intro h2 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 24px; font-weight: 800; letter-spacing: -0.6px;
-    margin-bottom: 10px;
-  }
-  .support-intro p {
-    color: var(--muted); font-size: 14px; line-height: 1.6;
-  }
+  .support-intro { max-width: 100%; margin: 0 auto 30px; text-align: center; }
+  .support-intro h2 { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -0.6px; margin-bottom: 10px; }
+  .support-intro p { color: var(--muted); font-size: 14px; line-height: 1.6; }
 
-  /* SUPPORT CARDS GRID */
-  .support-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px; margin-bottom: 30px;
-  }
+  .support-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 30px; }
   .support-card {
     background: var(--card); border: 1px solid var(--border);
     border-radius: 14px; padding: 20px;
-    transition: all 0.3s;
-    cursor: pointer;
-    position: relative;
+    transition: all 0.3s; cursor: pointer; position: relative;
   }
-  .support-card:hover {
-    border-color: var(--orange);
-    transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(26,111,255,0.15);
-  }
-  .support-card-icon {
-    font-size: 32px; margin-bottom: 12px;
-  }
-  .support-card h3 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px; font-weight: 700; margin-bottom: 8px;
-    color: var(--text);
-  }
-  .support-card p {
-    color: var(--muted); font-size: 13px; line-height: 1.5;
-    margin-bottom: 12px;
-  }
-  .support-card-link {
-    color: var(--orange); font-weight: 600; text-decoration: none;
-    font-size: 12px; display: inline-flex; align-items: center; gap: 4px;
-    transition: gap 0.2s;
-  }
+  .support-card:hover { border-color: var(--orange); transform: translateY(-6px); box-shadow: 0 16px 40px rgba(26,111,255,0.15); }
+  .support-card-icon { font-size: 32px; margin-bottom: 12px; }
+  .support-card h3 { font-family: 'Outfit', sans-serif; font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+  .support-card p { color: var(--muted); font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
+  .support-card-link { color: var(--orange); font-weight: 600; text-decoration: none; font-size: 12px; display: inline-flex; align-items: center; gap: 4px; transition: gap 0.2s; }
   .support-card-link:hover { gap: 8px; }
 
-  /* FAQ ACCORDION */
-  .faq-section {
-    max-width: 100%; margin: 0 auto;
-  }
-  .faq-section h3 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 20px; font-weight: 800; margin-bottom: 18px;
-    text-align: center;
-  }
-  .faq-item {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 10px; overflow: hidden;
-    margin-bottom: 10px;
-    transition: all 0.2s;
-  }
+  .faq-section { max-width: 100%; margin: 0 auto; }
+  .faq-section h3 { font-family: 'Outfit', sans-serif; font-size: 20px; font-weight: 800; margin-bottom: 18px; text-align: center; }
+  .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 10px; transition: all 0.2s; }
   .faq-item:hover { border-color: var(--orange); }
-  .faq-question {
-    padding: 14px 16px;
-    display: flex; justify-content: space-between; align-items: center;
-    cursor: pointer;
-    user-select: none;
-    font-weight: 600;
-    color: var(--text);
-    font-size: 14px;
-  }
+  .faq-question { padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; user-select: none; font-weight: 600; color: var(--text); font-size: 14px; }
   .faq-question:hover { background: var(--dark3); }
-  .faq-icon {
-    font-size: 16px; transition: transform 0.3s;
-    flex-shrink: 0;
-    margin-left: 12px;
-  }
-  .faq-item.active .faq-icon {
-    transform: rotate(180deg);
-  }
-  .faq-answer {
-    display: none;
-    padding: 0 16px 14px;
-    color: var(--muted);
-    font-size: 13px;
-    line-height: 1.6;
-    border-top: 1px solid var(--border);
-  }
-  .faq-item.active .faq-answer {
-    display: block;
-  }
+  .faq-icon { font-size: 16px; transition: transform 0.3s; flex-shrink: 0; margin-left: 12px; }
+  .faq-item.active .faq-icon { transform: rotate(180deg); }
+  .faq-answer { display: none; padding: 0 16px 14px; color: var(--muted); font-size: 13px; line-height: 1.6; border-top: 1px solid var(--border); }
+  .faq-item.active .faq-answer { display: block; }
 
-  /* QUICK SUPPORT BUTTONS */
-  .quick-support {
-    background: var(--dark);
-    border: 2px solid var(--border);
-    border-radius: 16px;
-    padding: 20px;
-    margin-top: 30px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
-  .quick-btn {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 14px 12px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s;
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 600;
-  }
-  .quick-btn:hover {
-    border-color: var(--orange);
-    background: var(--dark3);
-  }
-  .quick-btn-icon {
-    font-size: 24px; margin-bottom: 6px;
-  }
-  .quick-btn-text {
-    font-size: 11px;
-  }
+  .quick-support { background: var(--dark); border: 2px solid var(--border); border-radius: 16px; padding: 20px; margin-top: 30px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .quick-btn { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px 12px; text-align: center; cursor: pointer; transition: all 0.2s; text-decoration: none; color: var(--text); font-weight: 600; }
+  .quick-btn:hover { border-color: var(--orange); background: var(--dark3); }
+  .quick-btn-icon { font-size: 24px; margin-bottom: 6px; }
+  .quick-btn-text { font-size: 11px; }
 
-  /* CONTACT SECTION */
-  #contacto {
-    background: var(--dark2);
-    border-top: 1px solid var(--border);
-  }
-  .contact-grid {
-    display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start;
-  }
-  .contact-info h2 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 24px; font-weight: 800; letter-spacing: -0.3px;
-    margin-bottom: 12px;
-  }
+  #contacto { background: var(--dark2); border-top: 1px solid var(--border); }
+  .contact-grid { display: grid; grid-template-columns: 1fr; gap: 30px; align-items: start; }
+  .contact-info h2 { font-family: 'Outfit', sans-serif; font-size: 24px; font-weight: 800; letter-spacing: -0.3px; margin-bottom: 12px; }
   .contact-info p { color: var(--muted); line-height: 1.6; margin-bottom: 20px; font-size: 13px; }
-  .contact-item {
-    display: flex; align-items: flex-start; gap: 12px;
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 10px; padding: 12px 14px; margin-bottom: 10px;
-  }
+  .contact-item { display: flex; align-items: flex-start; gap: 12px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; }
   .contact-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
   .contact-item-label { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.4px; }
   .contact-item-value { font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; margin-top: 2px; }
-  .contact-form-card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 16px; padding: 24px;
-  }
-  .contact-form-card h3 {
-    font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 18px;
-  }
+  .contact-form-card { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 24px; }
+  .contact-form-card h3 { font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 800; margin-bottom: 18px; }
   .form-group { margin-bottom: 14px; }
   .form-group label { font-size: 11px; color: var(--muted); font-weight: 600; display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.4px; }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%; padding: 10px 12px;
-    background: var(--dark3); border: 1px solid var(--border);
-    border-radius: 8px; color: var(--text);
-    font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px;
-    outline: none; transition: border-color 0.2s;
-  }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--orange); }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 12px; background: var(--dark3); border: 1px solid var(--border); border-radius: 8px; color: var(--text); font-family: 'Plus Jakarta Sans', sans-serif; font-size: 13px; outline: none; transition: border-color 0.2s; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--orange); }
   .form-group textarea { resize: vertical; min-height: 80px; }
-  .form-submit {
-    width: 100%; background: var(--orange); color: white; border: none;
-    padding: 12px; border-radius: 10px;
-    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px;
-    cursor: pointer; transition: all 0.2s; margin-top: 3px;
-  }
+  .form-submit { width: 100%; background: var(--orange); color: white; border: none; padding: 12px; border-radius: 10px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 13px; cursor: pointer; transition: all 0.2s; margin-top: 3px; }
   .form-submit:hover { background: var(--orange-light); transform: translateY(-1px); }
-  .form-success {
-    display: none; background: var(--green-light);
-    border: 1px solid rgba(0,200,150,0.3); border-radius: 10px;
-    padding: 12px 14px; text-align: center;
-    color: var(--green); font-weight: 600; font-size: 13px; margin-top: 10px;
-  }
+  .form-success { display: none; background: var(--green-light); border: 1px solid rgba(0,200,150,0.3); border-radius: 10px; padding: 12px 14px; text-align: center; color: var(--green); font-weight: 600; font-size: 13px; margin-top: 10px; }
 
-  /* FOOTER */
-  footer {
-    background: var(--dark2);
-    border-top: 1px solid var(--border);
-    padding: 40px 4% 20px;
-  }
-  .footer-grid {
-    display: grid; grid-template-columns: 1fr;
-    gap: 30px; margin-bottom: 30px;
-  }
+  footer { background: var(--dark2); border-top: 1px solid var(--border); padding: 40px 4% 20px; }
+  .footer-grid { display: grid; grid-template-columns: 1fr; gap: 30px; margin-bottom: 30px; }
   .footer-brand p { color: var(--muted); font-size: 12px; line-height: 1.6; margin-top: 10px; max-width: 260px; }
   .footer-socials { display: flex; gap: 8px; margin-top: 16px; }
-  .social-btn {
-    width: 34px; height: 34px; border-radius: 8px;
-    background: var(--card); border: 1px solid var(--border);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 14px; cursor: pointer; transition: all 0.2s;
-  }
+  .social-btn { width: 34px; height: 34px; border-radius: 8px; background: var(--card); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; transition: all 0.2s; }
   .social-btn:hover { border-color: var(--orange); }
-  .footer-col h4 {
-    font-family: 'Outfit', sans-serif;
-    font-size: 13px; font-weight: 700; margin-bottom: 12px;
-  }
+  .footer-col h4 { font-family: 'Outfit', sans-serif; font-size: 13px; font-weight: 700; margin-bottom: 12px; }
   .footer-col ul { list-style: none; }
   .footer-col li { margin-bottom: 8px; }
   .footer-col a { color: var(--muted); text-decoration: none; font-size: 12px; transition: color 0.2s; }
   .footer-col a:hover { color: var(--orange); }
-  .footer-bottom {
-    border-top: 1px solid var(--border);
-    padding-top: 18px; display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-  }
+  .footer-bottom { border-top: 1px solid var(--border); padding-top: 18px; display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
   .footer-bottom p { font-size: 11px; color: var(--muted); }
   .payment-icons { display: flex; gap: 6px; flex-wrap: wrap; }
-  .pay-icon {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 6px; padding: 3px 8px;
-    font-size: 10px; color: var(--muted);
-  }
+  .pay-icon { background: var(--card); border: 1px solid var(--border); border-radius: 6px; padding: 3px 8px; font-size: 10px; color: var(--muted); }
 
-  /* DESKTOP RESPONSIVE */
   @media (min-width: 769px) {
     nav { height: 68px; padding: 0 5%; }
     .logo { font-size: 24px; }
     .nav-links { display: flex; }
     .icon-btn { width: 40px; height: 40px; font-size: 18px; }
-    
-    .hero {
-      min-height: 560px;
-      padding: 0 5%;
-    }
-    .hero::before {
-      display: block;
-      content: '';
-      position: absolute; right: -100px; top: -100px;
-      width: 700px; height: 700px;
-      background: radial-gradient(circle, rgba(26,111,255,0.10) 0%, transparent 65%);
-      pointer-events: none;
-    }
-    .hero-grid {
-      grid-template-columns: 1fr 1fr;
-      text-align: left;
-      gap: 60px;
-    }
+    .hero { min-height: 560px; padding: 0 5%; }
+    .hero::before { display: block; content: ''; position: absolute; right: -100px; top: -100px; width: 700px; height: 700px; background: radial-gradient(circle, rgba(26,111,255,0.10) 0%, transparent 65%); pointer-events: none; }
+    .hero-grid { grid-template-columns: 1fr 1fr; text-align: left; gap: 60px; }
     .hero-badge { justify-content: flex-start; }
     .hero h1 { font-size: clamp(36px, 5vw, 60px); }
     .hero p { margin-bottom: 32px; max-width: 440px; }
     .hero-btns { flex-direction: row; }
     .btn-primary, .btn-outline { width: auto; }
-    .hero-img-placeholder {
-      width: 420px; height: 340px;
-      max-width: none;
-      margin: 0;
-    }
-    
+    .hero-img-placeholder { width: 420px; height: 340px; max-width: none; margin: 0; }
     .stats-bar { flex-direction: row; justify-content: space-around; }
-    
     .section-header { flex-direction: row; justify-content: space-between; align-items: flex-end; }
-    
     .cat-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
-    
     .product-grid { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
-    
     .deal-grid { grid-template-columns: 1fr 1.2fr; }
-    
     .promo-grid { grid-template-columns: repeat(3, 1fr); }
     .promo-card { height: 220px; }
     .promo-emoji { font-size: 56px; }
-    
     .about-grid { grid-template-columns: 1fr 1fr; }
-    
     .support-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    
     .quick-support { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-    
     .contact-grid { grid-template-columns: 1fr 1fr; }
-    
     .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; }
     .footer-bottom { flex-direction: row; }
   }
@@ -862,10 +635,6 @@
 </head>
 <body>
 
-<!-- TOPBAR -->
-
-
-<!-- NAVBAR -->
 <nav>
   <div class="logo">Smart<span>SolutionsB</span>.</div>
   <ul class="nav-links">
@@ -882,7 +651,6 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-grid">
     <div>
@@ -908,7 +676,6 @@
   </div>
 </section>
 
-<!-- STATS -->
 <div class="stats-bar">
   <div class="stat"><span class="stat-num">500+</span><div class="stat-label">Tablets Vendidos</div></div>
   <div class="stat"><span class="stat-num">15+</span><div class="stat-label">Modelos Disponíveis</div></div>
@@ -917,12 +684,10 @@
   <div class="stat"><span class="stat-num">24/7</span><div class="stat-label">Suporte Técnico</div></div>
 </div>
 
-<!-- DEAL TICKER -->
 <div class="deal-ticker" id="ofertas">
   🔥 &nbsp; Melhores Preços em Huambo &nbsp;|&nbsp; Samsung · Xiaomi &nbsp;|&nbsp; Entrega Rápida &nbsp;|&nbsp; 🔥
 </div>
 
-<!-- CATEGORIES -->
 <section>
   <div class="section-header">
     <div>
@@ -939,7 +704,6 @@
   </div>
 </section>
 
-<!-- FEATURED PRODUCTS -->
 <section class="products-section" id="produtos">
   <div class="section-header">
     <div>
@@ -950,16 +714,11 @@
   </div>
   <div class="product-grid">
 
-    <!-- SAMSUNG GALAXY TAB A9 -->
     <div class="product-card">
       <div class="product-badge samsung">Samsung</div>
       <div class="product-wishlist">♡</div>
       <div class="product-img">
-        <img
-          src="https://lh3.googleusercontent.com/d/1TT-jCoNGFB-zRF7S8UAb879quFqJMJMR=s1000?authuser=0"
-          alt="Samsung Galaxy Tab A9"
-          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'"
-        >
+        <img src="https://lh3.googleusercontent.com/d/1TT-jCoNGFB-zRF7S8UAb879quFqJMJMR=s1000?authuser=0" alt="Samsung Galaxy Tab A9" onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'">
       </div>
       <div class="product-info">
         <div class="product-brand samsung">Samsung</div>
@@ -974,35 +733,24 @@
           <tr><td>Sistema</td><td>Android 13 · One UI 5.1</td></tr>
           <tr><td>Conectividade</td><td>Wi-Fi · Bluetooth 5.3</td></tr>
         </table>
-        <div class="product-rating">
-          <span class="stars">★★★★★</span>
-          <span class="rating-num">(342 avaliações)</span>
-        </div>
+        <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-num">(342 avaliações)</span></div>
         <div class="quantity-control">
           <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
           <div class="qty-value">1</div>
           <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
         </div>
         <div class="product-footer">
-          <div>
-            <div class="price-new">253.119 Kz</div>
-            <div class="price-sub">Preço em Huambo · Stock disponível</div>
-          </div>
+          <div><div class="price-new">253.119 Kz</div><div class="price-sub">Preço em Huambo · Stock disponível</div></div>
           <a href="#contacto" class="btn-buy">Comprar →</a>
         </div>
       </div>
     </div>
 
-    <!-- XIAOMI PAD 6 -->
     <div class="product-card">
       <div class="product-badge xiaomi">Xiaomi</div>
       <div class="product-wishlist">♡</div>
       <div class="product-img">
-        <img
-          src="https://lh3.googleusercontent.com/d/10YP2xCSnm6slZ2XGkxud22J-S8psZ1eo=s1000?authuser=0"
-          alt="Xiaomi Pad 6"
-          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>🖥️</span>'"
-        >
+        <img src="https://lh3.googleusercontent.com/d/10YP2xCSnm6slZ2XGkxud22J-S8psZ1eo=s1000?authuser=0" alt="Xiaomi Pad 6" onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>🖥️</span>'">
       </div>
       <div class="product-info">
         <div class="product-brand xiaomi">Xiaomi</div>
@@ -1017,35 +765,24 @@
           <tr><td>Sistema</td><td>Android 13 · MIUI Pad 14</td></tr>
           <tr><td>Conectividade</td><td>Wi-Fi 6 · Bluetooth 5.3</td></tr>
         </table>
-        <div class="product-rating">
-          <span class="stars">★★★★★</span>
-          <span class="rating-num">(218 avaliações)</span>
-        </div>
+        <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-num">(218 avaliações)</span></div>
         <div class="quantity-control">
           <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
           <div class="qty-value">1</div>
           <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
         </div>
         <div class="product-footer">
-          <div>
-            <div class="price-new">208.000 Kz</div>
-            <div class="price-sub">Preço no Huambo · Stock disponível</div>
-          </div>
+          <div><div class="price-new">208.000 Kz</div><div class="price-sub">Preço no Huambo · Stock disponível</div></div>
           <a href="#contacto" class="btn-buy">Comprar →</a>
         </div>
       </div>
     </div>
 
-    <!-- SAMSUNG GALAXY TAB A9 — PRATA -->
     <div class="product-card">
       <div class="product-badge samsung">Samsung</div>
       <div class="product-wishlist">♡</div>
       <div class="product-img" style="background:#f2f2f2;">
-        <img
-          src="https://lh3.googleusercontent.com/d/1MhKmdKq1I7yKs3faWRK5VrUjzA9eU_eG=s1000?authuser=0"
-          alt="Samsung Galaxy Tab A9 Prata"
-          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'"
-        >
+        <img src="https://lh3.googleusercontent.com/d/1MhKmdKq1I7yKs3faWRK5VrUjzA9eU_eG=s1000?authuser=0" alt="Samsung Galaxy Tab A9 Prata" onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'">
       </div>
       <div class="product-info">
         <div class="product-brand samsung">Samsung</div>
@@ -1060,35 +797,24 @@
           <tr><td>Sistema</td><td>Android 13 · One UI 5.1</td></tr>
           <tr><td>Conectividade</td><td>Wi-Fi · Bluetooth 5.3</td></tr>
         </table>
-        <div class="product-rating">
-          <span class="stars">★★★★★</span>
-          <span class="rating-num">(198 avaliações)</span>
-        </div>
+        <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-num">(198 avaliações)</span></div>
         <div class="quantity-control">
           <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
           <div class="qty-value">1</div>
           <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
         </div>
         <div class="product-footer">
-          <div>
-            <div class="price-new">253.119 Kz</div>
-            <div class="price-sub">Preço no Huambo · Stock disponível</div>
-          </div>
+          <div><div class="price-new">253.119 Kz</div><div class="price-sub">Preço no Huambo · Stock disponível</div></div>
           <a href="#contacto" class="btn-buy">Comprar →</a>
         </div>
       </div>
     </div>
 
-    <!-- SAMSUNG GALAXY TAB A9 — AZUL NAVY -->
     <div class="product-card">
       <div class="product-badge samsung">Samsung</div>
       <div class="product-wishlist">♡</div>
       <div class="product-img" style="background:#e6ecf7;">
-        <img
-          src="https://lh3.googleusercontent.com/d/1w5Tjsn5Wj8JJcmXEJwkkeWV4RpXGY80w=s1000?authuser=0"
-          alt="Samsung Galaxy Tab A9 Navy"
-          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'"
-        >
+        <img src="https://lh3.googleusercontent.com/d/1w5Tjsn5Wj8JJcmXEJwkkeWV4RpXGY80w=s1000?authuser=0" alt="Samsung Galaxy Tab A9 Navy" onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'">
       </div>
       <div class="product-info">
         <div class="product-brand samsung">Samsung</div>
@@ -1103,36 +829,24 @@
           <tr><td>Sistema</td><td>Android 13 · One UI 5.1</td></tr>
           <tr><td>Conectividade</td><td>Wi-Fi · Bluetooth 5.3</td></tr>
         </table>
-        <div class="product-rating">
-          <span class="stars">★★★★★</span>
-          <span class="rating-num">(175 avaliações)</span>
-        </div>
+        <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-num">(175 avaliações)</span></div>
         <div class="quantity-control">
           <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
           <div class="qty-value">1</div>
           <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
         </div>
         <div class="product-footer">
-          <div>
-            <div class="price-new">253.119 Kz</div>
-            <div class="price-sub">Preço no Huambo · Stock disponível</div>
-          </div>
+          <div><div class="price-new">253.119 Kz</div><div class="price-sub">Preço no Huambo · Stock disponível</div></div>
           <a href="#contacto" class="btn-buy">Comprar →</a>
         </div>
       </div>
     </div>
 
-    <!-- SAMSUNG GALAXY TAB A9 — VERDE -->
     <div class="product-card">
       <div class="product-badge samsung">Samsung</div>
       <div class="product-wishlist">♡</div>
       <div class="product-img" style="background:#e8f5ee;">
-        <img
-          src="https://lh3.googleusercontent.com/d/1TT-jCoNGFB-zRF7S8UAb879quFqJMJMR=s1000?authuser=0"
-          alt="Samsung Galaxy Tab A9 Verde"
-          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'"
-          style="filter: hue-rotate(100deg) saturate(0.75) brightness(1.02);"
-        >
+        <img src="https://lh3.googleusercontent.com/d/1TT-jCoNGFB-zRF7S8UAb879quFqJMJMR=s1000?authuser=0" alt="Samsung Galaxy Tab A9 Verde" onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>📱</span>'" style="filter: hue-rotate(100deg) saturate(0.75) brightness(1.02);">
       </div>
       <div class="product-info">
         <div class="product-brand samsung">Samsung</div>
@@ -1147,35 +861,24 @@
           <tr><td>Sistema</td><td>Android 13 · One UI 5.1</td></tr>
           <tr><td>Conectividade</td><td>Wi-Fi · Bluetooth 5.3</td></tr>
         </table>
-        <div class="product-rating">
-          <span class="stars">★★★★☆</span>
-          <span class="rating-num">(89 avaliações)</span>
-        </div>
+        <div class="product-rating"><span class="stars">★★★★☆</span><span class="rating-num">(89 avaliações)</span></div>
         <div class="quantity-control">
           <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
           <div class="qty-value">1</div>
           <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
         </div>
         <div class="product-footer">
-          <div>
-            <div class="price-new">253.119 Kz</div>
-            <div class="price-sub">Preço no Huambo · Stock disponível</div>
-          </div>
+          <div><div class="price-new">253.119 Kz</div><div class="price-sub">Preço no Huambo · Stock disponível</div></div>
           <a href="#contacto" class="btn-buy">Comprar →</a>
         </div>
       </div>
     </div>
 
-    <!-- XIAOMI PAD 6 — AZUL MIST -->
     <div class="product-card">
       <div class="product-badge xiaomi">Xiaomi</div>
       <div class="product-wishlist">♡</div>
       <div class="product-img" style="background:#e8f0f8;">
-        <img
-          src="https://lh3.googleusercontent.com/d/1ygBSAZ9WcWM-ygZleUfClDTbN96ZcmhI=s1000?authuser=0"
-          alt="Xiaomi Pad 6 Azul"
-          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>🖥️</span>'"
-        >
+        <img src="https://lh3.googleusercontent.com/d/1ygBSAZ9WcWM-ygZleUfClDTbN96ZcmhI=s1000?authuser=0" alt="Xiaomi Pad 6 Azul" onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>🖥️</span>'">
       </div>
       <div class="product-info">
         <div class="product-brand xiaomi">Xiaomi</div>
@@ -1190,35 +893,24 @@
           <tr><td>Sistema</td><td>Android 13 · MIUI Pad 14</td></tr>
           <tr><td>Conectividade</td><td>Wi-Fi 6 · Bluetooth 5.3</td></tr>
         </table>
-        <div class="product-rating">
-          <span class="stars">★★★★★</span>
-          <span class="rating-num">(144 avaliações)</span>
-        </div>
+        <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-num">(144 avaliações)</span></div>
         <div class="quantity-control">
           <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
           <div class="qty-value">1</div>
           <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
         </div>
         <div class="product-footer">
-          <div>
-            <div class="price-new">208.000 Kz</div>
-            <div class="price-sub">Preço no Huambo · Stock disponível</div>
-          </div>
+          <div><div class="price-new">208.000 Kz</div><div class="price-sub">Preço no Huambo · Stock disponível</div></div>
           <a href="#contacto" class="btn-buy">Comprar →</a>
         </div>
       </div>
     </div>
 
-    <!-- XIAOMI PAD 6 — DOURADO -->
     <div class="product-card">
       <div class="product-badge xiaomi">Xiaomi</div>
       <div class="product-wishlist">♡</div>
       <div class="product-img" style="background:#faf5e4;">
-        <img
-          src="https://lh3.googleusercontent.com/d/12zMRQDyTWAy6fXWkevzmUjxyS30Qt6Tr=s1000?authuser=0"
-          alt="Xiaomi Pad 6 Dourado"
-          onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>🖥️</span>'"
-        >
+        <img src="https://lh3.googleusercontent.com/d/12zMRQDyTWAy6fXWkevzmUjxyS30Qt6Tr=s1000?authuser=0" alt="Xiaomi Pad 6 Dourado" onerror="this.style.display='none'; this.parentElement.innerHTML+='<span style=\'font-size:80px\'>🖥️</span>'">
       </div>
       <div class="product-info">
         <div class="product-brand xiaomi">Xiaomi</div>
@@ -1233,20 +925,14 @@
           <tr><td>Sistema</td><td>Android 13 · MIUI Pad 14</td></tr>
           <tr><td>Conectividade</td><td>Wi-Fi 6 · Bluetooth 5.3</td></tr>
         </table>
-        <div class="product-rating">
-          <span class="stars">★★★★★</span>
-          <span class="rating-num">(116 avaliações)</span>
-        </div>
+        <div class="product-rating"><span class="stars">★★★★★</span><span class="rating-num">(116 avaliações)</span></div>
         <div class="quantity-control">
           <button class="qty-btn" onclick="changeQty(this, -1)">−</button>
           <div class="qty-value">1</div>
           <button class="qty-btn" onclick="changeQty(this, 1)">+</button>
         </div>
         <div class="product-footer">
-          <div>
-            <div class="price-new">208.000 Kz</div>
-            <div class="price-sub">Preço no Huambo · Stock disponível</div>
-          </div>
+          <div><div class="price-new">208.000 Kz</div><div class="price-sub">Preço no Huambo · Stock disponível</div></div>
           <a href="#contacto" class="btn-buy">Comprar →</a>
         </div>
       </div>
@@ -1255,7 +941,6 @@
   </div>
 </section>
 
-<!-- DEAL OF THE DAY -->
 <section class="deal-section">
   <div class="section-header" style="margin-bottom:30px">
     <div>
@@ -1277,17 +962,11 @@
       <a href="#contacto" class="btn-primary">Encomendar Agora — 253.119 Kz</a>
     </div>
     <div class="deal-img">
-      <img
-        src="https://lh3.googleusercontent.com/d/1TT-jCoNGFB-zRF7S8UAb879quFqJMJMR=s1000?authuser=0"
-        alt="Samsung Galaxy Tab A9"
-        onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:90px\'>📱</span>'"
-      >
+      <img src="https://lh3.googleusercontent.com/d/1TT-jCoNGFB-zRF7S8UAb879quFqJMJMR=s1000?authuser=0" alt="Samsung Galaxy Tab A9" onerror="this.style.display='none'; this.parentElement.innerHTML='<span style=\'font-size:90px\'>📱</span>'">
     </div>
   </div>
-  
 </section>
 
-<!-- PROMO BANNERS -->
 <section>
   <div class="promo-grid">
     <div class="promo-card p1">
@@ -1317,7 +996,6 @@
   </div>
 </section>
 
-<!-- ABOUT SECTION -->
 <section id="sobre">
   <div class="section-header">
     <div>
@@ -1332,37 +1010,30 @@
     <div class="about-content">
       <h2>A Sua Loja de Confiança no Huambo</h2>
       <p>A SmartSolution nasceu da visão de trazer tecnologia de qualidade e acessível a Huambo. Somos especialistas em tablets Samsung e Xiaomi, com um compromisso firme na satisfação dos nossos clientes.</p>
-      
       <div class="about-card">
         <div class="about-card-icon"></div>
         <h3>Missão</h3>
         <p>Disponibilizar tecnologia premium com preços justos e atendimento personalizado no Huambo.</p>
       </div>
-
       <div class="about-card">
         <div class="about-card-icon"></div>
         <h3>Visão</h3>
         <p>Ser a loja de referência para tablets e acessórios de tecnologia em Huambo e região.</p>
       </div>
-
       <div class="about-card">
         <div class="about-card-icon"></div>
         <h3>Valores</h3>
         <p>Honestidade, qualidade, confiança e atendimento excepcional em cada interação com os nossos clientes.</p>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- SUPPORT/FAQ SECTION -->
 <section id="suporte">
   <div class="support-intro">
     <h2>Centro de Apoio Técnico</h2>
     <p>Estamos aqui para ajudar. Encontre respostas às suas perguntas ou contacte-nos directamente.</p>
   </div>
-
-  <!-- SUPPORT CARDS -->
   <div class="support-grid">
     <div class="support-card">
       <div class="support-card-icon">📞</div>
@@ -1370,21 +1041,18 @@
       <p>Fale directamente com o nosso pessoal experiente através de telefone ou WhatsApp.</p>
       <a href="tel:+244931304728" class="support-card-link">Ligar Agora →</a>
     </div>
-
     <div class="support-card">
       <div class="support-card-icon">📧</div>
       <h3>E-mail de Suporte</h3>
       <p>Envie a sua questão técnica e receba uma resposta detalhada dentro de 24 horas.</p>
       <a href="mailto:smartsolutionb11@gmail.com" class="support-card-link">Enviar E-mail →</a>
     </div>
-
     <div class="support-card">
       <div class="support-card-icon">🛠️</div>
       <h3>Assistência Técnica</h3>
       <p>Suporte completo em problemas de hardware, software e configuração de dispositivos.</p>
       <a href="#contacto" class="support-card-link">Solicitar Ajuda →</a>
     </div>
-
     <div class="support-card">
       <div class="support-card-icon">🔧</div>
       <h3>Configuração & Setup</h3>
@@ -1393,123 +1061,54 @@
     </div>
   </div>
 
-  <!-- FAQ SECTION -->
   <div class="faq-section">
     <h3>Perguntas Frequentes</h3>
-
     <div class="faq-item" id="faq-garantia">
-      <div class="faq-question">
-        <span>Qual é o período de garantia dos tablets?</span>
-        <span class="faq-icon">▼</span>
-      </div>
-      <div class="faq-answer">
-        Todos os tablets Samsung e Xiaomi vendidos pela SmartSolution vêm com garantia oficial de 2 anos contra defeitos de fabrico. A garantia cobre reparação ou substituição gratuita do dispositivo durante este período. O comprovativo de compra é necessário para reclamar a garantia.
-      </div>
+      <div class="faq-question"><span>Qual é o período de garantia dos tablets?</span><span class="faq-icon">▼</span></div>
+      <div class="faq-answer">Todos os tablets Samsung e Xiaomi vendidos pela SmartSolution vêm com garantia oficial de 2 anos contra defeitos de fabrico. A garantia cobre reparação ou substituição gratuita do dispositivo durante este período. O comprovativo de compra é necessário para reclamar a garantia.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question">
-        <span>Como funciona o processo de devolução?</span>
-        <span class="faq-icon">▼</span>
-      </div>
-      <div class="faq-answer">
-        Pode devolver o tablet dentro de 7 dias após a compra se não estiver satisfeito, desde que esteja em condições perfeitas e com todos os acessórios originais. Entre em contacto connosco para iniciar o processo de devolução. O reembolso é processado após inspecção do produto.
-      </div>
+      <div class="faq-question"><span>Como funciona o processo de devolução?</span><span class="faq-icon">▼</span></div>
+      <div class="faq-answer">Pode devolver o tablet dentro de 7 dias após a compra se não estiver satisfeito, desde que esteja em condições perfeitas e com todos os acessórios originais. Entre em contacto connosco para iniciar o processo de devolução. O reembolso é processado após inspecção do produto.</div>
     </div>
-
     <div class="faq-item" id="faq-setup">
-      <div class="faq-question">
-        <span>Como configuro o meu novo tablet?</span>
-        <span class="faq-icon">▼</span>
-      </div>
-      <div class="faq-answer">
-        Ligamos o tablet, siga as instruções de configuração inicial de Android. Crie ou inicie sessão com a sua conta Google, configure Wi-Fi, e instale as aplicações que necessita. Oferecemos assistência técnica gratuita por telefone se tiver dúvidas durante a configuração.
-      </div>
+      <div class="faq-question"><span>Como configuro o meu novo tablet?</span><span class="faq-icon">▼</span></div>
+      <div class="faq-answer">Ligamos o tablet, siga as instruções de configuração inicial de Android. Crie ou inicie sessão com a sua conta Google, configure Wi-Fi, e instale as aplicações que necessita. Oferecemos assistência técnica gratuita por telefone se tiver dúvidas durante a configuração.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question">
-        <span>Qual é o tempo de entrega no Huambo?</span>
-        <span class="faq-icon">▼</span>
-      </div>
-      <div class="faq-answer">
-        Para clientes no Huambo, o tempo de entrega é de 1 a 3 dias úteis após confirmação de pagamento. Oferecemos envio grátis em encomendas acima de 500.000 Kz. Pode rastrear a sua encomenda através do nosso sistema de acompanhamento.
-      </div>
+      <div class="faq-question"><span>Qual é o tempo de entrega no Huambo?</span><span class="faq-icon">▼</span></div>
+      <div class="faq-answer">Para clientes no Huambo, o tempo de entrega é de 1 a 3 dias úteis após confirmação de pagamento. Oferecemos envio grátis em encomendas acima de 500.000 Kz. Pode rastrear a sua encomenda através do nosso sistema de acompanhamento.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question">
-        <span>Posso fazer uma encomenda customizada?</span>
-        <span class="faq-icon">▼</span>
-      </div>
-      <div class="faq-answer">
-        Sim! Se procura uma configuração específica ou pacotes com acessórios, contacte-nos directamente. Oferecemos pacotes personalizados com S Pen, teclados, capas protetoras e outros acessórios ao melhor preço.
-      </div>
+      <div class="faq-question"><span>Posso fazer uma encomenda customizada?</span><span class="faq-icon">▼</span></div>
+      <div class="faq-answer">Sim! Se procura uma configuração específica ou pacotes com acessórios, contacte-nos directamente. Oferecemos pacotes personalizados com S Pen, teclados, capas protetoras e outros acessórios ao melhor preço.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question">
-        <span>O tablet é selado e original?</span>
-        <span class="faq-icon">▼</span>
-      </div>
-      <div class="faq-answer">
-        Todos os tablets vendidos pela SmartSolution são 100% originais e novos, selados do fabricante. Temos parcerias oficiais com Samsung e Xiaomi, garantindo autenticidade e qualidade. Pode verificar a caixa original e os documentos de garantia.
-      </div>
+      <div class="faq-question"><span>O tablet é selado e original?</span><span class="faq-icon">▼</span></div>
+      <div class="faq-answer">Todos os tablets vendidos pela SmartSolution são 100% originais e novos, selados do fabricante. Temos parcerias oficiais com Samsung e Xiaomi, garantindo autenticidade e qualidade. Pode verificar a caixa original e os documentos de garantia.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question">
-        <span>Que métodos de pagamento aceitam?</span>
-        <span class="faq-icon">▼</span>
-      </div>
-      <div class="faq-answer">
-        Aceitamos: Transferência Bancária, Multicaixa, TPA, Vistos/Mastercard e Dinheiro em mão (no Huambo). Oferecemos descontos especiais para pagamentos à vista. Contacte-nos para discutir planos de pagamento personalizados.
-      </div>
+      <div class="faq-question"><span>Que métodos de pagamento aceitam?</span><span class="faq-icon">▼</span></div>
+      <div class="faq-answer">Aceitamos: Transferência Bancária, Multicaixa, TPA, Vistos/Mastercard e Dinheiro em mão (no Huambo). Oferecemos descontos especiais para pagamentos à vista. Contacte-nos para discutir planos de pagamento personalizados.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question">
-        <span>Como resolver problemas técnicos com o tablet?</span>
-        <span class="faq-icon">▼</span>
-      </div>
-      <div class="faq-answer">
-        Se tiver problemas técnicos, contacte-nos por telefone ou WhatsApp. O nosso técnico experiente pode diagnosticar o problema remotamente ou agendar uma visita se necessário. Oferecemos reparação sob garantia gratuitamente para defeitos de fabrico.
-      </div>
+      <div class="faq-question"><span>Como resolver problemas técnicos com o tablet?</span><span class="faq-icon">▼</span></div>
+      <div class="faq-answer">Se tiver problemas técnicos, contacte-nos por telefone ou WhatsApp. O nosso técnico experiente pode diagnosticar o problema remotamente ou agendar uma visita se necessário. Oferecemos reparação sob garantia gratuitamente para defeitos de fabrico.</div>
     </div>
-
     <div class="faq-item">
-      <div class="faq-question">
-        <span>Vocês fazem entregas fora do Huambo?</span>
-        <span class="faq-icon">▼</span>
-      </div>
-      <div class="faq-answer">
-        Sim, podemos fazer entregas noutras cidades de Angola. Os custos e tempos de entrega variam conforme a localização. Por favor, contacte-nos com a sua morada para uma cotação personalizada.
-      </div>
+      <div class="faq-question"><span>Vocês fazem entregas fora do Huambo?</span><span class="faq-icon">▼</span></div>
+      <div class="faq-answer">Sim, podemos fazer entregas noutras cidades de Angola. Os custos e tempos de entrega variam conforme a localização. Por favor, contacte-nos com a sua morada para uma cotação personalizada.</div>
     </div>
   </div>
 
-  <!-- QUICK SUPPORT -->
   <div class="quick-support">
-    <a href="tel:+244931304728" class="quick-btn">
-      <div class="quick-btn-icon">☎️</div>
-      <div class="quick-btn-text">Telefonar</div>
-    </a>
-    <a href="https://wa.me/244931304728" class="quick-btn">
-      <div class="quick-btn-icon">💬</div>
-      <div class="quick-btn-text">WhatsApp</div>
-    </a>
-    <a href="mailto:smartsolutionb11@gmail.com" class="quick-btn">
-      <div class="quick-btn-icon">📧</div>
-      <div class="quick-btn-text">E-mail</div>
-    </a>
-    <a href="#contacto" class="quick-btn">
-      <div class="quick-btn-icon">📝</div>
-      <div class="quick-btn-text">Formulário</div>
-    </a>
+    <a href="tel:+244931304728" class="quick-btn"><div class="quick-btn-icon">☎️</div><div class="quick-btn-text">Telefonar</div></a>
+    <a href="https://wa.me/244931304728" class="quick-btn"><div class="quick-btn-icon">💬</div><div class="quick-btn-text">WhatsApp</div></a>
+    <a href="mailto:smartsolutionb11@gmail.com" class="quick-btn"><div class="quick-btn-icon">📧</div><div class="quick-btn-text">E-mail</div></a>
+    <a href="#contacto" class="quick-btn"><div class="quick-btn-icon">📝</div><div class="quick-btn-text">Formulário</div></a>
   </div>
 </section>
 
-<!-- CONTACT SECTION -->
 <section id="contacto">
   <div class="section-header">
     <div>
@@ -1523,36 +1122,24 @@
       <p>Tem interesse num dos nossos tablets ou precisa de mais informação? A nossa equipa no Huambo está disponível para o ajudar com qualquer questão.</p>
       <div class="contact-item">
         <div class="contact-icon">📍</div>
-        <div>
-          <div class="contact-item-label">Localização</div>
-          <div class="contact-item-value">Huambo, Angola</div>
-        </div>
+        <div><div class="contact-item-label">Localização</div><div class="contact-item-value">Huambo, Angola</div></div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">📞</div>
-        <div>
-          <div class="contact-item-label">Telefone / WhatsApp</div>
-          <div class="contact-item-value">+244 931 304 728</div>
-        </div>
+        <div><div class="contact-item-label">Telefone / WhatsApp</div><div class="contact-item-value">+244 931 304 728</div></div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">📧</div>
-        <div>
-          <div class="contact-item-label">E-mail</div>
-          <div class="contact-item-value">smartsolutionb11@gmail.com</div>
-        </div>
+        <div><div class="contact-item-label">E-mail</div><div class="contact-item-value">smartsolutionb11@gmail.com</div></div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">🕒</div>
-        <div>
-          <div class="contact-item-label">Horário</div>
-          <div class="contact-item-value">Seg–Sáb: 08h00 – 18h00</div>
-        </div>
+        <div><div class="contact-item-label">Horário</div><div class="contact-item-value">Seg–Sáb: 08h00 – 18h00</div></div>
       </div>
     </div>
     <div class="contact-form-card">
       <h3>Enviar Mensagem</h3>
-      <form id="contactForm" action="https://formspree.io/f/xyzgqwpo" method="POST">
+      <form id="contactForm" action="https://formspree.io/f/mnjrbjjv" method="POST">
         <div class="form-group">
           <label>Nome Completo</label>
           <input type="text" placeholder="O seu nome" name="nome" id="f-name" required>
@@ -1586,7 +1173,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -1641,7 +1227,6 @@
 </footer>
 
 <script>
-  // Countdown Timer
   (function() {
     const end = new Date(Date.now() + (2*24*60*60 + 18*60*60 + 43*60 + 28) * 1000);
     setInterval(() => {
@@ -1653,7 +1238,6 @@
     }, 1000);
   })();
 
-  // Wishlist
   document.querySelectorAll('.product-wishlist').forEach(btn => {
     btn.addEventListener('click', () => {
       btn.textContent = btn.textContent.trim() === '♡' ? '♥' : '♡';
@@ -1661,7 +1245,6 @@
     });
   });
 
-  // FAQ Accordion
   document.querySelectorAll('.faq-question').forEach(question => {
     question.addEventListener('click', () => {
       const item = question.closest('.faq-item');
@@ -1671,7 +1254,6 @@
     });
   });
 
-  // Quantity Control
   function changeQty(btn, delta) {
     const control = btn.closest('.quantity-control');
     const display = control.querySelector('.qty-value');
@@ -1681,20 +1263,15 @@
     display.textContent = val;
   }
 
-  // Form submit
   function submitForm(event) {
-    const form = document.getElementById('contactForm');
     const name = document.getElementById('f-name').value.trim();
     const phone = document.getElementById('f-phone').value.trim();
-    
     if (!name || !phone) {
       alert('Por favor, preencha o nome e o número de telefone.');
       event.preventDefault();
       return false;
     }
-    
-    // Formspree vai lidar com o envio
-    // Mostrar mensagem de sucesso após submit
+    const form = document.getElementById('contactForm');
     form.addEventListener('submit', function() {
       setTimeout(() => {
         document.getElementById('form-success').style.display = 'block';
@@ -1703,7 +1280,6 @@
         }, 5000);
       }, 500);
     }, { once: true });
-    
     return true;
   }
 </script>
