@@ -1552,32 +1552,36 @@
     </div>
     <div class="contact-form-card">
       <h3>Enviar Mensagem</h3>
-      <div class="form-group">
-        <label>Nome Completo</label>
-        <input type="text" placeholder="O seu nome" id="f-name">
-      </div>
-      <div class="form-group">
-        <label>Telemóvel / WhatsApp</label>
-        <input type="tel" placeholder="+244 9XX XXX XXX" id="f-phone">
-      </div>
-      <div class="form-group">
-        <label>Produto de Interesse</label>
-        <select id="f-product">
-          <option value="">Selecione um produto...</option>
-          <option>Samsung Galaxy Tab A9 — 253.119 Kz</option>
-          <option>Xiaomi Pad 6 — 208.000 Kz</option>
-          <option>Acessórios</option>
-          <option>Outro</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label>Mensagem</label>
-        <textarea placeholder="Descreva a sua necessidade ou faça a sua encomenda..." id="f-msg"></textarea>
-      </div>
-      <button class="form-submit" onclick="submitForm()">Enviar Mensagem →</button>
-      <div class="form-success" id="form-success">
-        ✅ Mensagem enviada com sucesso! Entraremos em contacto em breve.
-      </div>
+      <form id="contactForm" action="https://formspree.io/f/xyzgqwpo" method="POST">
+        <div class="form-group">
+          <label>Nome Completo</label>
+          <input type="text" placeholder="O seu nome" name="nome" id="f-name" required>
+        </div>
+        <div class="form-group">
+          <label>Telemóvel / WhatsApp</label>
+          <input type="tel" placeholder="+244 9XX XXX XXX" name="telefone" id="f-phone" required>
+        </div>
+        <div class="form-group">
+          <label>Produto de Interesse</label>
+          <select name="produto" id="f-product">
+            <option value="">Selecione um produto...</option>
+            <option>Samsung Galaxy Tab A9 — 253.119 Kz</option>
+            <option>Xiaomi Pad 6 — 208.000 Kz</option>
+            <option>Acessórios</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Mensagem</label>
+          <textarea placeholder="Descreva a sua necessidade ou faça a sua encomenda..." name="mensagem" id="f-msg"></textarea>
+        </div>
+        <input type="hidden" name="_subject" value="Nova Mensagem de Contacto - Smart Solution">
+        <input type="hidden" name="_captcha" value="false">
+        <button type="submit" class="form-submit" onclick="return submitForm(event)">Enviar Mensagem →</button>
+        <div class="form-success" id="form-success">
+          ✅ Mensagem enviada com sucesso! Entraremos em contacto em breve.
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -1678,21 +1682,29 @@
   }
 
   // Form submit
-  function submitForm() {
+  function submitForm(event) {
+    const form = document.getElementById('contactForm');
     const name = document.getElementById('f-name').value.trim();
     const phone = document.getElementById('f-phone').value.trim();
+    
     if (!name || !phone) {
       alert('Por favor, preencha o nome e o número de telefone.');
-      return;
+      event.preventDefault();
+      return false;
     }
-    document.getElementById('form-success').style.display = 'block';
-    document.getElementById('f-name').value = '';
-    document.getElementById('f-phone').value = '';
-    document.getElementById('f-product').value = '';
-    document.getElementById('f-msg').value = '';
-    setTimeout(() => {
-      document.getElementById('form-success').style.display = 'none';
-    }, 5000);
+    
+    // Formspree vai lidar com o envio
+    // Mostrar mensagem de sucesso após submit
+    form.addEventListener('submit', function() {
+      setTimeout(() => {
+        document.getElementById('form-success').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('form-success').style.display = 'none';
+        }, 5000);
+      }, 500);
+    }, { once: true });
+    
+    return true;
   }
 </script>
 
